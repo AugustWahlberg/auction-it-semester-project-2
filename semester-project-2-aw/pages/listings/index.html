@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semester delivery Auction IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/assets/style.css">
+    <script defer src="/src/js/index.js" type="module"></script>
+    <script defer src="/src/pages/listings/index.js" type="module"></script>
+    
+  </head>
+  <body>
+     <!-- Navbar start -->
+ <header>
+  <div>
+  <nav class="bg-pool-blue mx-auto flex uppercase w-screen text-ctn-white text-opacity-80 box-content"> 
+
+    <div class="w-28 logo bg-sea-blue hover:bg-opacity-80 md:w-40 p-4 mx-auto">
+      <img class="h-12 w-12 mx-auto md:h-16 md:w-16" src="/src/assets/auction_it_logo_white.png" alt="logo" id="home-btn">
+    </div>
+
+    <ul class="mx-auto hidden md:flex md:items-center text-center justify-center w-screen md:w-full text-navbar-li">
+      <li class="mr-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/listings/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">Listings</a></li>
+      <li class="mx-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/how-it-works/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">How it works</a></li>
+      <li class="ml-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/my-profile/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">My profile</a></li>
+    </ul>
+
+    <div class="hidden md:flex bg-sea-blue w-40 items-center justify-center">
+      <img class="h-12 w-12 rounded-full" src="/src/assets/default-photo-navbar.png" alt="">
+    </div>
+
+    <!-- mobile button here -->
+    <div class="md:hidden w-screen flex justify-self-end place-content-end py-6 pr-8" id="mobile-menu-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg> 
+    </div>
+
+  </div>
+    <!-- mobile menu here -->
+    <div class="block bg-pool-blue md:hidden w-screen items-center h-auto mx-auto justify-center uppercase hidden" id="mobile-menu">
+      <ul class="mx-auto text-center">
+        <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-80 hover:bg-opacity-100"><a href="/pages/listings/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">Listings</a></li>
+        <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-60 hover:bg-opacity-100"><a href="/pages/how-it-works/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">How it works</a></li>
+        <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-60 hover:bg-opacity-100"><a href="/pages/my-profile/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">My profile</a></li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
+  <!-- Navbar ends -->
+
+    
+    <main>
+    <div class="max-w-screen mt-40">
+      <div class="top-buttons">
+        <button class="nav-button active-btn" id="registerBtn">Feed</button>
+        <button class="nav-button" id="loginBtn">Categories</button>
+        <button class="nav-button" id="visitBtn" >Favorites</button>
+      </div>
+
+      <div class="justify-center pt-4">
+        <button class="create-new-button flex items-center mx-auto mb-3" id="visitBtn"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 m-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>New Listing</button>
+      </div>
+
+   
+      <div class="w-1/2 justify-center mx-auto">
+      <form class="flex items-center pt-4">   
+        <label for="search" class="sr-only text-ctn-white">Search</label>
+        <div class="w-full">
+            <input type="text" id="search" class="bg-sea-blue border text-ctn-white text-sm rounded-lg focus:border-succ-green block w-full pl-10 p-2.5" placeholder="Search" required>
+        </div>
+
+        <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white search-btn rounded-lg ">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+      </div>
+
+
+        <div class="flex flex-wrap mb-20 justify-center">
+
+          <div class="p-5">  
+            <!--Card 1-->
+            <div class="w-listings-small rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+              <div class="px-6 py-4">
+                <div class=" font-bold text-xl mb-2">Header</div>
+                <p class=" 700 text-listing-body">
+                  Bud ends: 02/12/22 - 18:00
+                </p>
+              </div>
+              <div class="px-6 pb-4">
+                <span class="tag">#tag1</span>
+                <span class="tag">#tag2</span>
+              </div>
+              <div class="flex justify-center pb-4"> 
+                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="p-5">  
+            <!--Card 2-->
+            <div class="w-listings-small rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+              <div class="px-6 py-4">
+                <div class=" font-bold text-xl mb-2">Header</div>
+                <p class=" 700 text-listing-body">
+                  Bud ends: 02/12/22 - 18:00
+                </p>
+              </div>
+              <div class="px-6 pb-4">
+                <span class="tag">#tag1</span>
+                <span class="tag">#tag2</span>
+              </div>
+              <div class="flex justify-center pb-4"> 
+                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5">  
+            <!--Card 3-->
+            <div class="w-listings-small rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+              <div class="px-6 py-4">
+                <div class=" font-bold text-xl mb-2">Header</div>
+                <p class=" 700 text-listing-body">
+                  Bud ends: 02/12/22 - 18:00
+                </p>
+              </div>
+              <div class="px-6 pb-4">
+                <span class="tag">#tag1</span>
+                <span class="tag">#tag2</span>
+              </div>
+              <div class="flex justify-center pb-4"> 
+                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5">  
+            <!--Card 4-->
+            <div class="w-listings-small rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+              <div class="px-6 py-4">
+                <div class=" font-bold text-xl mb-2">Header</div>
+                <p class=" 700 text-listing-body">
+                  Bud ends: 02/12/22 - 18:00
+                </p>
+              </div>
+              <div class="px-6 pb-4">
+                <span class="tag">#tag1</span>
+                <span class="tag">#tag2</span>
+              </div>
+              <div class="flex justify-center pb-4"> 
+                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5">  
+            <!--Card 5-->
+            <div class="w-listings-small rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+              <div class="px-6 py-4">
+                <div class=" font-bold text-xl mb-2">Header</div>
+                <p class=" 700 text-listing-body">
+                  Bud ends: 02/12/22 - 18:00
+                </p>
+              </div>
+              <div class="px-6 pb-4">
+                <span class="tag">#tag1</span>
+                <span class="tag">#tag2</span>
+              </div>
+              <div class="flex justify-center pb-4"> 
+                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5">  
+            <!--Card 6-->
+            <div class="w-listings-small rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Header</div>
+                <p class="700 text-listing-body">
+                  Bud ends: 02/12/22 - 18:00
+                </p>
+              </div>
+              <div class="px-6 pb-4">
+                <span class="tag">#tag1</span>
+                <span class="tag">#tag2</span>
+              </div>
+              <div class="flex justify-center pb-4"> 
+                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+      <div class="mx-auto pt-3 text-center"> &copy; AuctionIt</div>
+    </footer>
+
+  </body>
+</html>

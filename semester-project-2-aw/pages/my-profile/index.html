@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semester delivery Auction IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/assets/style.css">
+    <script defer src="/src/pages/my-profile/index.js" type="module"></script>
+    <script defer src="/src/js/index.js" type="module"></script>
+    
+    
+  </head>
+  <body>
+
+     <!-- Navbar start -->
+     <header>
+      <div>
+      <nav class="bg-pool-blue mx-auto flex uppercase w-screen text-ctn-white text-opacity-20"> 
+  
+        <div class="w-28 logo bg-sea-blue hover:bg-opacity-80 md:w-40 p-4 mx-auto">
+          <img class="h-12 w-12 mx-auto md:h-16 md:w-16" src="/src/assets/auction_it_logo_white.png" alt="logo" id="home-btn">
+        </div>
+
+        <ul class="mx-auto hidden md:flex md:items-center text-center justify-center w-screen md:w-full text-navbar-li">
+          <li class="mr-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/listings/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">Listings</a></li>
+          <li class="mx-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/how-it-works/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">How it works</a></li>
+          <li class="ml-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/my-profile/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">My profile</a></li>
+        </ul>
+  
+        <div class="hidden md:flex bg-sea-blue w-40 items-center justify-center">
+          <img class="h-12 w-12 rounded-full" src="/src/assets/default-photo-navbar.png" alt="">
+        </div>
+
+        <!-- mobile button here -->
+        <div class="md:hidden w-screen flex justify-self-end place-content-end py-6 pr-8" id="mobile-menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg> 
+        </div>
+
+      </div>
+        <!-- mobile menu here -->
+        <div class="block bg-pool-blue md:hidden w-screen items-center h-auto mx-auto justify-center uppercase hidden" id="mobile-menu">
+          <ul class="mx-auto text-center">
+            <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-60 hover:bg-opacity-100"><a href="/pages/listings/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">Listings</a></li>
+            <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-60 hover:bg-opacity-100"><a href="/pages/how-it-works/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">How it works</a></li>
+            <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-80 hover:bg-opacity-100"><a href="/pages/my-profile/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">My profile</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </header>
+      <!-- Navbar ends -->
+
+    <main>
+      <button class="logout-btn mt-28 bg-err-red bg-opacity-60 py-1 px-4 rounded-full text-button-mini m-4 hover:bg-opacity-100" id="logout">Log out</button>
+
+      <div class=" flex flex-wrap max-w-xl w-auto mx-auto mt-2 md:mt-4 mb-5 bg-white justify-center shadow-lg rounded">
+        <div class="justify-center p-4">
+        <img class="h-40 w-40 rounded-full flex" src="/src/assets/default-photo-listing.png" alt="">
+        <button class="block edit-btn mx-auto" id="editAvatarBtn">Edit avatar</button>
+      </div>
+
+      <div class="block max-w-80 justify-between w-full bg-pool-blue bg-opacity-20 rounded p-4 items-center">
+
+        <span class="max-w-80 x-auto 2xl:w-full flex text-button justify-between w-full px-5">
+        <p class="pb-4 font-bold">augwahlberg</p>
+        <p class="pb-4">Username</p>
+      </span>
+
+      <span class="max-w-80 x-auto 2xl:w-full flex text-button justify-between w-full px-5">
+        <p class="pb-4 font-bold">aug.wah@noroff.no</p>
+        <p class="pb-4">Email</p>
+      </span>
+      
+      <span class="max-w-80 x-auto 2xl:w-full flex text-button justify-between w-full px-5">
+        <p class="pb-4 font-bold">1000</p>
+        <p class="pb-4">Credits</p>
+      </span>
+      </div>
+  </div>
+  
+  <div class="justify-center">
+  <button class="create-new-button flex items-center mx-auto mb-3" id="profileCreateNewBtn"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 m-2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>New Listing</button>
+</div>
+
+<div class="top-buttons">
+  <button class="nav-button active-btn" id="registerBtn">My Listings</button>
+  <button class="nav-button" id="loginBtn">Active Bids</button>
+  <button class="nav-button" id="visitBtn" >Favorites</button>
+</div>
+
+<!-- Card container start -->
+<div class="max-w-screen flex flex-wrap mb-20 justify-center">
+
+  <div class="p-5">  
+    <!--Card 1-->
+    <div class="w-listings-small rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Header</div>
+        <p class="700 text-listing-body">
+          Bud ends: 02/12/22 - 18:00
+        </p>
+      </div>
+      <div class="px-6 pb-4">
+        <span class="tag">#tag1</span>
+        <span class="tag">#tag2</span>
+      </div>
+      <div class="flex justify-center pb-4"> 
+        <button class="see-more-btn" id="seeMoreBtn">See more</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="p-5">  
+    <!--Card 2-->
+    <div class="w-listings-small rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Header</div>
+        <p class="700 text-listing-body">
+          Bud ends: 02/12/22 - 18:00
+        </p>
+      </div>
+      <div class="px-6 pb-4">
+        <span class="tag">#tag1</span>
+        <span class="tag">#tag2</span>
+      </div>
+      <div class="flex justify-center pb-4"> 
+        <button class="see-more-btn" id="seeMoreBtn1">See more</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-5">  
+    <!--Card 3-->
+    <div class="w-listings-small rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+      <div class="px-6 py-4">
+        <div class=" font-bold text-xl mb-2">Header</div>
+        <p class=" 700 text-listing-body">
+          Bud ends: 02/12/22 - 18:00
+        </p>
+      </div>
+      <div class="px-6 pb-4">
+        <span class="tag">#tag1</span>
+        <span class="tag">#tag2</span>
+      </div>
+      <div class="flex justify-center pb-4"> 
+        <button class="see-more-btn" id="seeMoreBtn1">See more</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-5">  
+    <!--Card 4-->
+    <div class="w-listings-small rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/src/assets/default-photo-listing.png" alt="Mountain">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Header</div>
+        <p class="700 text-listing-body">
+          Bud ends: 02/12/22 - 18:00
+        </p>
+      </div>
+      <div class="px-6 pb-4">
+        <span class="tag">#tag1</span>
+        <span class="tag">#tag2</span>
+      </div>
+      <div class="flex justify-center pb-4"> 
+        <button class="see-more-btn" id="seeMoreBtn1">See more</button>
+      </div>
+    </div>
+  </div> 
+
+</div>
+<!-- Card container end-->
+
+
+<!-- Edit avatr modal-->
+<div class="modal-bg hidden" id="editAvatarModal">
+  <div class="modal w-modal-form">
+    <div class="border-b px-4 py-2 flex justify-between">
+    <h3 class="text-header font-bold">Edit Avatar</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-modal close-edit-avatar-modal">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  </div>
+
+  <div class="p-3">
+  <form id="edit-avatar-form" method="post" action="/auth/login">
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example2cg">New Avatar</label>
+      <input type="text" name="subject" id="form3Example2cg" class="form-control-input" required title="Provide a subject"/>
+    </div>
+
+  </form>
+</div>
+
+    <div class="flex justify-center items-center border-t p-3">
+      <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-edit-avatar-modal">Cancel</button>
+      <button class="hp-button modal-btn bg-succ-green bg-opacity-80 save-avatar">Save</button>
+    </div>
+    
+  </div>
+</div>
+<!-- edit avatar modal end-->
+
+ <!-- New listing modal starts here-->
+ <div class="modal-bg hidden" id="newListingModal">
+
+  <div class="modal w-modal-form">
+    <div class="border-b px-4 py-2 flex justify-between">
+    <h3 class="text-header font-bold">Create New listing</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-modal close-profile-create-listing-modal">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  </div>
+    <div class="p-3">
+
+      <form class="" id="profile-create-listing" method="post" action="/auth/register">
+
+        <div class="form-outline mb-4">
+          <label class="form-label block" for="form3Example2cg">*Title</label>
+          <input type="text" name="title" id="form3Example2cg" class="form-control-input" required pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Only @(stud.)noroff.no domains are allowed to register"/>
+          
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3cg">Description</label>
+          <input type="textarea" name="-listingdescription" id="form3Example3cg" class="form-control-input h-40"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3cg">*Aution end date</label>
+          <input type="date" name="date" id="form3Example3cg" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4cg">*Auction end time</label>
+          <input type="time" name="time" id="form3Example4cg" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4cg">Add main Image</label>
+          <input type="url" name="avatar" id="form3Example4cg" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4cg">Add sub image 1</label>
+          <input type="url" name="avatar" id="form3Example4cg" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4cg">Add sub image 2</label>
+          <input type="url" name="avatar" id="form3Example4cg" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4cg">Add sub image 3</label>
+          <input type="url" name="avatar" id="form3Example4cg" class="form-control-input"/>
+        </div>
+
+        <div class="m-2 text-center hidden" id="feedback-reg"> <i class="fa-3x fa-solid fa-square-check"> </i> You have successfully registered a user
+        </div>
+      </form>
+      
+    </div>
+    <div class="flex justify-center items-center border-t p-3">
+      <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-profile-create-listing-modal">Cancel</button>
+      <button class="hp-button modal-btn bg-succ-green bg-opacity-80 confirm-profile-new-lsiting">Register</button>
+    </div>
+  </div>
+</div>
+<!--New listing modal ends here-->
+  </main>
+
+  <footer>
+    <div class="mx-auto pt-3 text-center"> &copy; AuctionIt</div>
+  </footer>
+
+  </body>
+</html>

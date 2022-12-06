@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semester delivery Auction IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/assets/style.css">
+    <script defer src="/src/js/index.js" type="module"></script>
+    <script defer src="/src/pages/view-listing/index.js" type="module"></script>
+    
+  </head>
+  <body>
+
+        <!-- Navbar start -->
+     <header>
+      <div>
+      <nav class="bg-pool-blue mx-auto flex uppercase w-screen text-ctn-white text-opacity-80"> 
+  
+        <div class="w-28 logo bg-sea-blue hover:bg-opacity-80 md:w-40 p-4 mx-auto">
+          <img class="h-12 w-12 mx-auto md:h-16 md:w-16" src="/src/assets/auction_it_logo_white.png" alt="logo" id="home-btn">
+        </div>
+
+        <ul class="mx-auto hidden md:flex md:items-center text-center justify-center w-screen md:w-full text-navbar-li">
+          <li class="mr-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/listings/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">Listings</a></li>
+          <li class="mx-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/how-it-works/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">How it works</a></li>
+          <li class="ml-6 my-6 md:my-0 w-screen md:w-36"><a href="/pages/my-profile/" class="text-ctn-white text-opacity-80 hover:text-opacity-100">My profile</a></li>
+        </ul>
+  
+        <div class="hidden md:flex bg-sea-blue w-40 items-center justify-center">
+          <img class="h-12 w-12 rounded-full" src="/src/assets/default-photo-navbar.png" alt="">
+        </div>
+
+        <!-- mobile button here -->
+        <div class="md:hidden w-screen flex justify-self-end place-content-end py-6 pr-8" id="mobile-menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg> 
+        </div>
+
+      </div>
+        <!-- mobile menu here -->
+        <div class="block bg-pool-blue md:hidden w-screen items-center h-auto mx-auto justify-center uppercase hidden" id="mobile-menu">
+          <ul class="mx-auto text-center">
+            <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-60 hover:bg-opacity-100"><a href="/pages/listings/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">Listings</a></li>
+            <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-60 hover:bg-opacity-100"><a href="/pages/how-it-works/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">How it works</a></li>
+            <li class="mx-auto py-4 md:w-40 bg-sea-blue bg-opacity-80 hover:bg-opacity-100"><a href="/pages/my-profile/" class=" text-xl text-ctn-white text-opacity-80 hover:text-opacity-100">My profile</a></li>
+          </ul>
+        </div>
+  
+      </nav>
+    </header>
+      <!-- Navbar ends -->
+    <main>
+
+      <div class="flex mt-28 mx-auto justify-center">
+        <a href="/pages/listings/">Listnings > </a>
+        <p>Listing > </p>
+        <p>Header </p>
+      </div>
+ 
+        <div class="max-w-screen flex flex-wrap mb-20 justify-center">
+
+          <!-- card starts -->
+
+          <div class="max-w-xl rounded overflow-hidden shadow-lg mt-2">
+            <img class="w-full h-80" src="/src/assets/default-photo-listing.png" alt="Main Image">
+            <div class="px-6 py-4">
+
+               <!-- Sub picture start -->
+
+              <div class="flex">
+                <img class="h-10 w-10 m-2 border border-sea-blue" src="/src/assets/default-photo-listing.png" alt="Sunset in the mountains">
+                <img class="h-10 w-10 m-2" src="/src/assets/default-photo-listing.png" alt="Sunset in the mountains">
+                <img class="h-10 w-10 m-2" src="/src/assets/default-photo-listing.png" alt="Sunset in the mountains">
+                <img class="h-10 w-10 m-2" src="/src/assets/default-photo-listing.png" alt="Sunset in the mountains">
+              </div>
+
+              <!-- Sub picture ends -->
+
+              <div class="font-bold text-xl mb-2">Header <span class="text-sm pl-3">by @username</span></div>
+              <p class="text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag 1</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag 2</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag 3</span>
+            </div>
+
+            <!-- Standing bid starts -->
+            <div>
+              <h3 class="pl-6 text-header-md underline underline-offset-2">Current standing bid</h3>
+              <p class="pl-6 text-header-sm font-bold">100 credits</p>
+            </div>
+             <!-- Standing bid ends -->
+
+              <!-- date starts -->
+            <div class="pb-4">
+              <h3 class="pl-6 text-header-md underline underline-offset-2 pt-2">Bid ends</h3>
+              <span class="flex items-end">
+                <p class="pl-6 text-header-sm font-bold">22.02.23</p>
+                <p class="pl-6 text-header-xs font-bold">18:00</p>
+              </span>
+              
+            </div>
+             <!-- Standing bid Ends -->
+
+             <div class="flex justify-center items-center border-t py-3">
+
+              <form class="p-4" method="post" id="bidForm">
+                
+                <div class="form-outline mb-4 mpx-2 p-4 w-bid-input">
+                  <label class="form-label font-semibold " for="form3Example2cg">Type Your Bid</label>
+                    <input type="number" name="bid" id="form3Example2cg" class="form-control-input p-4 h-8" title="Bid ammount"/>
+                  <div class="form-error hidden" id="email-error">Please enter your @noroff email address</div>
+                </div>
+          
+              </form>
+              
+              <button class="hp-button modal-btn bg-succ-green bg-opacity-80 " id="bid-modal-btn">Bid</button>
+            </div>
+          </div>
+        </div>
+        <!-- card ends -->  
+    </div>
+
+
+    <div class="max-w-screen flex flex-wrap mb-20 justify-center">
+
+      
+<div class="w-full max-w-xl p-4 border rounded sm:p-8 border-sea-gren bg-opacity-20">
+  <div class="flex items-center justify-between mb-4">
+      <h5 class="text-xl font-bold leading-none text-olive-green">Bid History</h5>
+ </div>
+ <div class="flow-root">
+      <ul role="list">
+          <li class="py-3 sm:py-4 border-b-2">
+              <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                      <img class="w-8 h-8 rounded-full" src="/src/assets/default-photo-listing.png" alt="Neil image">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                      <p class="text-sm font-medium">
+                          Neil Sims
+                      </p>
+
+                      <span class="text-sm font-medium flex">
+                        <p> 22-12-22 -</p>
+                        <p>18:00</p>
+                      </span>
+                  </div>
+                  <div class="inline-flex items-center text-base font-semibold">
+                      100
+                  </div>
+              </div>
+          </li>
+
+          <li class="py-3 sm:py-4">
+            <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0">
+                    <img class="w-8 h-8 rounded-full" src="/src/assets/default-photo-listing.png" alt="Neil image">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium">
+                        Neil Sims
+                    </p>
+
+                    <span class="text-sm font-medium flex">
+                      <p> 22-12-22 -</p>
+                      <p>18:00</p>
+                    </span>
+                </div>
+                <div class="inline-flex items-center text-base font-semibold">
+                    100
+                </div>
+            </div>
+        </li>
+    
+      </ul>
+ </div>
+</div>
+</div>
+<!-- Confirm  Bid modal start-->
+<div class="modal-bg hidden" id="confirmBidModal">
+
+  <div class="modal w-modal-message">
+    <div class="border-b px-4 py-2 flex justify-between">
+    <h3 class="text-header  font-bold">Bid</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-modal close-confirm-bid-modal">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  </div>
+    
+      <p class="p-3">Are you sure you want to bid 
+        <span class="italic font-bold">100 credits on</span> 
+        <span class="italic font-bold">*Header</span>
+        ? 
+       </p>
+      
+    <div class="flex justify-center items-center border-t p-3">
+      <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-confirm-bid-modal">Cancel</button>
+      <button class="hp-button modal-btn bg-succ-green bg-opacity-80 confirm-bid-listning">Delete</button>
+    </div>
+  </div>
+</div>
+<!-- Confirm  Bid  modal end-->
+    </main>
+
+    <footer>
+      <div class="mx-auto pt-3 text-center"> &copy; AuctionIt</div>
+    </footer>
+
+  </body>
+</html>

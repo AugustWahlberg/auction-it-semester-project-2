@@ -21,7 +21,7 @@
   }
 
   .hp-button {
-    @apply bg-olive-green bg-opacity-80 hover:bg-opacity-100 rounded-lg p-2 h-11 m-3 block w-40 md:h-14  md:w-60 mx-auto font-bold text-button-sm md:text-button;
+    @apply bg-olive-green bg-opacity-80 hover:bg-opacity-100 rounded-lg p-2 h-11 m-3 block w-40 md:h-14 md:w-60 mx-auto font-bold text-button-sm md:text-button;
   }
 
   .modal-bg {
@@ -36,15 +36,16 @@
     @apply w-40 h-10 bg-opacity-60 w-28 h-10 sm:w-32 sm:h-11 md:w-40 md:h-12;
   }
 
-  .active-nav{
+  .active-nav {
     @apply underline underline-offset-1 text-ctn-white text-opacity-100;
   }
 
-  .h-nav{
+  .h-nav {
     @apply text-ctn-white text-opacity-100;
   }
 
-  .nav-button, .see-more-btn {
+  .nav-button,
+  .see-more-btn {
     @apply bg-pool-blue bg-opacity-60 hover:bg-opacity-100 mx-auto text-button-sm lg:text-button;
   }
 
@@ -60,15 +61,15 @@
     @apply bg-succ-green bg-opacity-60 hover:bg-opacity-100 rounded-lg w-40 h-10 mx-auto text-button-sm lg:text-button mx-10;
   }
 
-  .active-btn{
+  .active-btn {
     @apply border border-sea-blue;
   }
 
-  .form-control-input{
+  .form-control-input {
     @apply bg-input-blue rounded-sm w-full h-8;
   }
 
-  .close-modal{
+  .close-modal {
     @apply w-8 h-8 text-sea-blue opacity-80 hover:opacity-100;
   }
 
@@ -81,7 +82,7 @@
   }
 
   .hp-logo {
-    @apply w-52  md:w-60 mx-auto pb-6;
+    @apply w-52 md:w-60 mx-auto pb-6;
   }
 
   .hp-slogan {
@@ -89,21 +90,23 @@
   }
 
   .btn-txt {
-    @apply sm:text-button-sm md:text-button
+    @apply sm: text-button-sm md:text-button
   }
 
-  .top-buttons{
+  .top-buttons {
     @apply flex items-center justify-center;
   }
 
   .contact-us-btn {
     @apply bg-succ-green bg-opacity-60 hover:bg-opacity-100 rounded-lg w-40 h-10 text-button-sm my-0 mx-20 mt-5 font-semibold text-sea-blue;
   }
-  
+
   .edit-btn {
     @apply bg-pool-blue bg-opacity-20 hover:bg-opacity-100 rounded-lg w-28 h-8 text-button-sm my-0 mx-20 mt-5 font-semibold text-sea-blue hover:text-ctn-white;
   }
-  .question-q, .question-a {
+
+  .question-q,
+  .question-a {
     @apply pl-2 p-2 mt-2;
   }
 
@@ -120,10 +123,10 @@
   }
 
   .form-error {
-    @apply bg-err-red bg-opacity-20 text-err-red p-2 text-center; 
+    @apply bg-err-red bg-opacity-20 text-err-red p-2 text-center;
   }
 
   .form-success {
-    @apply bg-succ-green bg-opacity-20 text-succ-green p-2 text-center; 
+    @apply bg-succ-green bg-opacity-20 text-succ-green p-2 text-center;
   }
 }

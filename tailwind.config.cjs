@@ -5,7 +5,7 @@ const plugin = require("tailwindcss/plugin");
 
 // eslint-disable-next-line no-undef
 module.exports = {
-  content: ["./*.{html,js}", "**/*.{html,js}"],
+  content: ["./*.{html,js}", "**/*.{html,js,mjs,cjs}"],
   theme: {
     screens: {
       sm: "440px",

@@ -26,7 +26,7 @@ if (result.statusCode === 400){
   feedbackReg.classList.remove("hidden");
   feedbackReg.classList.remove("form-success");
   feedbackReg.classList.add("form-error");
-  feedbackReg.innerHTML = "Something went wrong";
+  feedbackReg.innerHTML = "Profile already exists";
 }
 
 else if (result.id) {

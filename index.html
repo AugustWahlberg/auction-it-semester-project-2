@@ -31,7 +31,7 @@
     />
     <script
       defer
-      src="./src/js/pages/home/index.js"
+      src="/src/js/index.js"
       type="module"
     ></script>
   </head>
@@ -182,29 +182,27 @@
                 class="form-control-input"
               />
             </div>
+
+            <div
+            class="flex justify-center items-center border-t p-3"
+          >
+            <button
+              class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-register-modal"
+              >Cancel</button
+            >
+            <button
+              class="hp-button modal-btn bg-succ-green bg-opacity-80 proceed-register"
+              >Register</button
+            >
+          </div>
           </form>
         </div>
+       
         <div
-          class="flex justify-center items-center border-t p-3"
-        >
-          <button
-            class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-register-modal"
-            >Cancel</button
-          >
-          <button
-            class="hp-button modal-btn bg-succ-green bg-opacity-80 proceed-register"
-            >Register</button
-          >
-        </div>
-        <div
-          class="form-success hidden"
+          class="hidden"
           id="feedback-reg"
         >
-          <i
-            class="fa-3x fa-solid fa-square-check"
-          >
-          </i>
-          You have successfully registered a user
+         <h2>hello</h2>
         </div>
       </div>
     </div>

@@ -1,8 +1,15 @@
 import { setRegisterFormListener } from "./handlers/register.mjs";
-import * as modals from "./pages/home/index.mjs";
+import * as homeModals from "./pages/home/index.mjs";
+import { navAction } from "./handlers/navigation.mjs"; 
 
-modals.registerModalActions();
-modals.loginModalActions();
-modals.visitModalActions();
+const path = location.pathname;
 
+
+if (path === "/")  {
+homeModals.registerModalActions();
+homeModals.loginModalActions();
+homeModals.visitModalActions();
 setRegisterFormListener();
+}
+
+navAction();

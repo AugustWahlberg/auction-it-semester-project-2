@@ -11,9 +11,6 @@ const cancelLoginModal = document.querySelector(
 const closeLoginModal = document.querySelector(
   ".close-login-modal"
 );
-const proceedLogin = document.querySelector(
-  ".proceed-login"
-);
 
 //login functions
 showLoginModal.addEventListener(
@@ -37,10 +34,4 @@ closeLoginModal.addEventListener(
   }
 );
 
-proceedLogin.addEventListener(
-  "click",
-  function () {
-    window.location.href = "/pages/listings/";
-  }
-);
 }

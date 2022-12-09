@@ -91,4 +91,5 @@ const logOut = document.getElementById("logout");
 
 logOut.addEventListener("click", function () {
   window.location.href = "/";
+  localStorage.clear();
 });

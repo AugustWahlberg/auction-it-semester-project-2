@@ -3,6 +3,7 @@ import * as homeModals from "./pages/home/index.mjs";
 import { navAction } from "./handlers/navigation.mjs"; 
 import * as templates from "./api/templates/getListings.mjs";
 import * as listingMethods from "./api/listings/displayListings.mjs";
+import { setAvatarToNav } from "./handlers/navigation.mjs";
 
 const path = location.pathname;
 
@@ -33,4 +34,9 @@ async function viewListings() {
 
 if (path === "/pages/listings/") {
   viewListings();
+}
+
+//DISPLAY NAVBAR AVATAR
+if (path !== "/") {
+  setAvatarToNav();
 }

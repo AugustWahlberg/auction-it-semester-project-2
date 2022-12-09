@@ -40,3 +40,10 @@ if (path === "/pages/listings/") {
 if (path !== "/") {
   setAvatarToNav();
 }
+
+
+//REDIRECT USER TO LOGGED IN PAGE IF FROM HOMEPAGE
+//THIS ONLY IF THEY HAVE LOGGED IN BEFORE
+if(localStorage.getItem("token") && path === "/") {
+  window.location.replace("/pages/listings/");
+}

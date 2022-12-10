@@ -1,28 +1,28 @@
-  /**
-  * Function to render listings
-  * @param {object} postDataList
+ /**
+  * Function to render only the users post
+  * @param {object} userListingDataList
   * @param {const} parent
   */
- 
-   export function renderListingTemplates(listingDataList, parent) {
-    parent.append(...listingDataList.map((item) => listingTemplate(item, "multiple")));
+  export function renderloggedInUserListingTemplates(userListingDataList, parent) {
+    parent.append(...userListingDataList.map(loggedInUserListingTemplate));
     console.log();
   }
- 
-  export function listingTemplate(postData, type) {
+
+  
+  export function loggedInUserListingTemplate(userListings, type) {
     const listing = document.createElement("div");
-    const id = postData.id;
-    const mainImage = postData.media[0];
-    const bidEnds = postData.endsAt;
+    const id = userListings.id;
+    const mainImage = userListings.media[0];
+    const bidEnds = userListings.endsAt;
     const timestamp = new Date(bidEnds).getTime();
     const day = new Date(timestamp).getDate();
     const month = new Date(timestamp).getMonth() + 1;
     const year = new Date(timestamp).getFullYear();
     const time = new Date(timestamp).toLocaleTimeString();
     const formatedBidEnds = `${day}/${month}/${year} - ${time}`;
-    const title = postData.title;
+    const title = userListings.title;
   
-    listing.classList.add("post");
+    listing.classList.add("listing");
     listing.setAttribute("id", id);
   
     // if (type === "multiple") {
@@ -49,5 +49,5 @@
             </div>
           </div>
   `;
-    return listing;
+    return post;
   }

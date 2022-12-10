@@ -1,8 +1,8 @@
 import { setRegisterFormListener, setLoginFormListener} from "./handlers/index.mjs";
 import * as homeModals from "./pages/home/index.mjs";
 import { navAction } from "./handlers/navigation.mjs"; 
-import * as templates from "./api/templates/getListings.mjs";
-import * as listingMethods from "./api/listings/displayListings.mjs";
+import * as templates from "./api/templates/index.mjs";
+import * as listingMethods from "./api/listings//index.mjs";
 import { setAvatarToNav } from "./handlers/navigation.mjs";
 import { viewProfile } from "./pages/my-profile/viewProfile.js";
 
@@ -54,4 +54,18 @@ if(localStorage.getItem("token") && path === "/") {
 
 if (path === "/pages/my-profile/") {
   viewProfile();
+}
+
+
+//-------
+
+//VIEW Logged IN USER Listings
+async function viewUsersListing () {
+  const listings = await listingMethods.fetchLoggedInsListings();
+  const container = document.getElementById("profileListings");
+  templates.renderloggedInUserListingTemplates (listings, container);
+}
+
+if (path === "/pages/my-profile/") {
+  viewUsersListing();
 }

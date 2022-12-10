@@ -26,7 +26,7 @@ if (path !== "/") {
 
 async function viewListings() {
   const listings = await listingMethods.getListings();
-  //console.log(posts)
+  //console.log(listings)
   const container = document.getElementById("listingsFeed");
   templates.renderListingTemplates(listings, container);
   // searchPosts(posts);
@@ -62,6 +62,7 @@ if (path === "/pages/my-profile/") {
 //VIEW Logged IN USER Listings
 async function viewUsersListing () {
   const listings = await listingMethods.fetchLoggedInsListings();
+  console.log(listings)
   const container = document.getElementById("profileListings");
   templates.renderloggedInUserListingTemplates (listings, container);
 }

@@ -15,11 +15,3 @@ export async function getListings() {
   // console.log(allPosts)
   return allListings;
 }
-
-import { fetchProfile } from "../user/fetchProfile.js";
-
-export async function fetchLoggedInsListings () {
-  const profileData = await fetchProfile();
-  const userListings = profileData.listings;
-  return userListings;
-}

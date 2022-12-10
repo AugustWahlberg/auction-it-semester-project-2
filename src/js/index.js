@@ -4,6 +4,7 @@ import { navAction } from "./handlers/navigation.mjs";
 import * as templates from "./api/templates/getListings.mjs";
 import * as listingMethods from "./api/listings/displayListings.mjs";
 import { setAvatarToNav } from "./handlers/navigation.mjs";
+import { viewProfile } from "./pages/my-profile/viewProfile.js";
 
 const path = location.pathname;
 
@@ -37,7 +38,7 @@ if (path === "/pages/listings/") {
 }
 
 //DISPLAY NAVBAR AVATAR
-if (path !== "/") {
+if (path !== "/" && localStorage.getItem("token")) {
   setAvatarToNav();
 }
 
@@ -46,4 +47,11 @@ if (path !== "/") {
 //THIS ONLY IF THEY HAVE LOGGED IN BEFORE
 if(localStorage.getItem("token") && path === "/") {
   window.location.replace("/pages/listings/");
+}
+
+
+// View Profile
+
+if (path === "/pages/my-profile/") {
+  viewProfile();
 }

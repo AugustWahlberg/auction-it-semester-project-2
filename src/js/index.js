@@ -5,6 +5,8 @@ import * as templates from "./api/templates/index.mjs";
 import * as listingMethods from "./api/listings//index.mjs";
 import { setAvatarToNav } from "./handlers/navigation.mjs";
 import { viewProfile } from "./pages/my-profile/viewProfile.js";
+import { setCreateListingListener } from "./handlers/createListing.mjs"
+
 
 const path = location.pathname;
 
@@ -70,3 +72,10 @@ async function viewUsersListing () {
 if (path === "/pages/my-profile/") {
   viewUsersListing();
 }
+
+
+// CREATE POST
+
+ if (path === "/pages/my-profile/") {
+   setCreateListingListener();
+ }

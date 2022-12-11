@@ -54,9 +54,9 @@ const cancel = document.querySelector(
 const closeModal = document.querySelector(
   ".close-profile-create-listing-modal"
 );
-const confirmNewListing = document.querySelector(
-  ".confirm-profile-new-lsiting"
-);
+// const confirmNewListing = document.querySelector(
+//   ".confirm-profile-new-lsiting"
+// );
 
 //Create new Listing Functions
 profileCreateNewBtn.addEventListener(
@@ -73,19 +73,21 @@ closeModal.addEventListener("click", function () {
   newListingModal.classList.add("hidden");
 });
 
-confirmNewListing.addEventListener(
-  "click",
-  function () {
-    newListingModal.classList.add("hidden");
-  }
-);
+// confirmNewListing.addEventListener(
+//   "click",
+//   function () {
+//     newListingModal.classList.add("hidden");
+//   }
+// );
 
-const seeMore =
-  document.getElementById("seeMoreBtn");
+// const seeMore =
+//   document.getElementById("seeMoreBtn");
 
-seeMore.addEventListener("click", function () {
-  window.location.href = "/pages/my-listing/";
-});
+// seeMore.addEventListener("click", function () {
+//   window.location.href = "/pages/my-listing/";
+// });
+
+
 
 const logOut = document.getElementById("logout");
 

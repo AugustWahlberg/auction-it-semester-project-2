@@ -30,7 +30,7 @@
         </ul>
   
         <div class="hidden md:flex bg-sea-blue w-40 items-center justify-center">
-          <img class="h-12 w-12 rounded-full" src="/src/assets/photos/default-photo-navbar.png" alt="Avatar xs" id="navAvatar">
+          <img class="h-12 w-12 rounded-full border border-succ-green" src="/src/assets/photos/default-photo-navbar.png" alt="Avatar xs" id="navAvatar">
         </div>
 
     <!-- mobile button here -->
@@ -60,7 +60,7 @@
 
       <div class=" flex flex-wrap max-w-xl w-auto mx-auto mt-2 md:mt-4 mb-5 bg-white justify-center shadow-lg rounded">
         <div class="justify-center p-4">
-        <img class="h-40 w-40 rounded-full flex" src="/src/assets/photos/default-photo-listing.png" alt="user avatar" id="userAvatar">
+        <img class="h-40 w-40 rounded-full flex border-2 border-sky-blue" src="/src/assets/photos/default-photo-listing.png" alt="user avatar" id="userAvatar">
         <button class="block edit-btn mx-auto" id="editAvatarBtn">Edit avatar</button>
       </div>
 
@@ -115,20 +115,20 @@
   </div>
 
   <div class="p-3">
-  <form id="edit-avatar-form" method="post" action="/auth/login">
+  <form id="editAvatar" method="post">
 
     <div class="form-outline mb-4">
       <label class="form-label" for="form3Example2cg">New Avatar</label>
-      <input type="text" name="subject" id="form3Example2cg" class="form-control-input" required title="Provide a subject"/>
+      <input type="url" name="avatar" id="form3Example2cg" class="form-control-input" required/>
     </div>
-
-  </form>
-</div>
 
     <div class="flex justify-center items-center border-t p-3">
       <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-edit-avatar-modal">Cancel</button>
       <button class="hp-button modal-btn bg-succ-green bg-opacity-80 save-avatar">Save</button>
     </div>
+
+  </form>
+</div>
     
   </div>
 </div>

@@ -5,7 +5,8 @@ import * as templates from "./api/templates/index.mjs";
 import * as listingMethods from "./api/listings//index.mjs";
 import { setAvatarToNav } from "./handlers/navigation.mjs";
 import { viewProfile } from "./pages/my-profile/viewProfile.js";
-import { setCreateListingListener } from "./handlers/createListing.mjs"
+import { setCreateListingListener } from "./handlers/createListing.mjs";
+import { updateAvatarListener } from "./handlers/updateAvatarLisener.mjs";
 
 
 const path = location.pathname;
@@ -79,3 +80,5 @@ if (path === "/pages/my-profile/") {
  if (path === "/pages/my-profile/") {
    setCreateListingListener();
  }
+
+ updateAvatarListener ();

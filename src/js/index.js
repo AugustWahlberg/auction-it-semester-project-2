@@ -81,4 +81,6 @@ if (path === "/pages/my-profile/") {
    setCreateListingListener();
  }
 
- updateAvatarListener ();
+ if (path === "/pages/my-profile/") {
+  updateAvatarListener ();
+ }

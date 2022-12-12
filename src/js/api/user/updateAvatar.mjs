@@ -1,9 +1,7 @@
 import { authFetch } from "../authfetch.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
-const profile = localStorage.getItem('profile');
-const profileRetrieved =  JSON.parse(profile);
-const userName = profileRetrieved.name;
-const action = `/profiles/${userName}/media`;
+
+
 const method = "put";
 
 /**
@@ -13,7 +11,10 @@ const method = "put";
  */
 export async function updateAvatar(newAvatar) {
 
-  const createListingURL = API_SOCIAL_URL+action;
+const profile = localStorage.getItem('profile');
+const profileRetrieved =  JSON.parse(profile);
+const userName = profileRetrieved.name;
+const createListingURL = API_SOCIAL_URL+ `/profiles/${userName}/media`;
   
     // Make the POST request and parse the response as JSON
     const response = await authFetch (createListingURL, {

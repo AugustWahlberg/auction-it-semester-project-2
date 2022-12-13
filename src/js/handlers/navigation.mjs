@@ -11,7 +11,7 @@ mobileMenuBtn.addEventListener("click", () => {
 
 
 homeBtn.addEventListener("click", () => {
-  window.location.href = '/pages/listings/';
+  window.location.href = '/';
 });
 }
 

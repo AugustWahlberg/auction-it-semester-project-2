@@ -7,6 +7,7 @@ import { setAvatarToNav } from "./handlers/navigation.mjs";
 import { viewProfile } from "./pages/my-profile/viewProfile.js";
 import { setCreateListingListener } from "./handlers/createListing.mjs";
 import { updateAvatarListener } from "./handlers/updateAvatarLisener.mjs";
+import { getListning } from "./api/listings/singleListning.mjs";
 
 
 const path = location.pathname;
@@ -84,3 +85,8 @@ if (path === "/pages/my-profile/") {
  if (path === "/pages/my-profile/") {
   updateAvatarListener ();
  }
+
+
+ if (path === "/pages/my-listing/") {
+  getListning();
+}

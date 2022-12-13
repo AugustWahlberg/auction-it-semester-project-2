@@ -36,6 +36,10 @@ module.exports = {
       100: "1",
     },
 
+    minWidth: {
+      'myListning': '500px',
+    },
+
     extend: {
       colors: {
         "sea-blue": "#064C56",

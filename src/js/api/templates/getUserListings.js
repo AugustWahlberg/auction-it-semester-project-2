@@ -44,7 +44,7 @@
                 <span class="tag">#tag2</span>
               </div>
               <div class="flex justify-center pb-4"> 
-                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              <a href="/pages/my-listing/?id=${id}"><button class="see-more-btn" id="seeMoreBtn">See more</button></a>
               </div>
             </div>
           </div>

@@ -66,8 +66,8 @@
 
           <!-- card starts -->
 
-          <div class="max-w-xl rounded overflow-hidden shadow-lg mt-2">
-            <img class="w-full h-80" src="/src/assets/photos/default-photo-listing.png" alt="Main Image">
+          <div class="max-w-xl md:min-w-myListning rounded overflow-hidden shadow-lg mt-2" id="listingByUser">
+            <img class="w-full h-80 object-cover" src="/src/assets/photos/default-photo-listing.png" alt="Main Image" id="myListingMainImage">
             <div class="px-6 py-4">
 
                <!-- Sub picture start -->
@@ -81,9 +81,9 @@
 
               <!-- Sub picture ends -->
 
-              <div class="font-bold text-xl mb-2">Header <span class="text-sm pl-3">by @augwahlberg</span></div>
-              <p class="text-para md:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              <div class="font-bold text-xl mb-2" id="myListingTitle"> <span class="text-sm pl-3" id="myListingName"></span></div>
+              <p class="text-para md:text-base" id="myListingDescription">
+               
               </p>
             </div>
             <div class="px-6 pt-4 pb-2">
@@ -95,7 +95,7 @@
             <!-- Standing bid starts -->
             <div>
               <h3 class="pl-6 text-header-md underline underline-offset-2">Current standing bid</h3>
-              <p class="pl-6 text-header-sm font-bold">100 credits</p>
+              <p class="pl-6 text-header-sm font-bold" id="myListingStandingBid">0 credits</p>
             </div>
              <!-- Standing bid ends -->
 
@@ -103,8 +103,8 @@
             <div class="pb-4">
               <h3 class="pl-6 text-header-md underline underline-offset-2 pt-2">Bid ends</h3>
               <span class="flex items-end">
-                <p class="pl-6 text-header-sm font-bold">22.02.23</p>
-                <p class="pl-6 text-header-xs font-bold">18:00</p>
+                <p class="pl-6 text-header-sm font-bold" id="myListingBidEnds">22.02.23</p>
+         
               </span>
               
             </div>

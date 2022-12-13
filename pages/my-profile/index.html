@@ -60,7 +60,7 @@
 
       <div class=" flex flex-wrap max-w-xl w-auto mx-auto mt-2 md:mt-4 mb-5 bg-white justify-center shadow-lg rounded">
         <div class="justify-center p-4">
-        <img class="h-40 w-40 rounded-full flex border-2 border-sky-blue" src="/src/assets/photos/default-photo-listing.png" alt="user avatar" id="userAvatar">
+        <img class="h-40 w-40 rounded-full flex border-2 border-sky-blue object-cover" src="/src/assets/photos/default-photo-listing.png" alt="user avatar" id="userAvatar">
         <button class="block edit-btn mx-auto" id="editAvatarBtn">Edit avatar</button>
       </div>
 
@@ -151,12 +151,11 @@
         <div class="form-outline mb-4">
           <label class="form-label block" for="form3Example2cg">*Title</label>
           <input type="text" name="title" id="form3Example2cg" class="form-control-input" title="Title" required/>
-          
         </div>
 
         <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3cg">Description</label>
-          <input type="textarea" name="description" id="form3Example3cg" class="form-control-input h-40"/>
+          <input type="text-area" name="description" id="form3Example3cg" class="form-control-input h-40"/>
         </div>
 
         <div class="form-outline mb-4">
@@ -166,7 +165,7 @@
 
         <div class="form-outline mb-4">
           <label class="form-label" for="form3Example4cg">Add image</label>
-          <input type="url" name="media" id="form3Example4cg" class="form-control-input"/>
+          <input type="url" name="media" id="form3Example4cg" class="form-control-input" required/>
         </div>
 
         <div class="form-outline mb-4">

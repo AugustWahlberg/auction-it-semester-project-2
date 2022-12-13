@@ -12,7 +12,10 @@
   export function listingTemplate(postData, type) {
     const listing = document.createElement("div");
     const id = postData.id;
-    const mainImage = postData.media[0];
+    let mainImage = postData.media[0];
+    if (postData.media.length === 0) {
+      mainImage = "/src/assets/photos/default-photo-listing.png";
+    }
     const bidEnds = postData.endsAt;
     const timestamp = new Date(bidEnds).getTime();
     const day = new Date(timestamp).getDate();

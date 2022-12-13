@@ -36,14 +36,17 @@ export async function getListning() {
     myListingTitle.textContent = title;
     myListingDescription.innerHTML = description;
     myListingBidEnds.innerHTML = endsAt;
-    myListingMainImage.src = media;
+
+    if (media.length > 0){
+      myListingMainImage.src = media; 
+    }
+    
 
     if (bids.length > 0){
       const bidLength = bids.length - 1;
       const currentBid = bids[bidLength].amount;
       myListingStandingBid.innerHTML = currentBid + " Credits";
-    }
-    
+    }    
 
   } catch (error) {
     userListing.innerHTML = "An error occured!";

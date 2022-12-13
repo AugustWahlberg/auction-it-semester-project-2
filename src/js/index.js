@@ -8,6 +8,7 @@ import { viewProfile } from "./pages/my-profile/viewProfile.js";
 import { setCreateListingListener } from "./handlers/createListing.mjs";
 import { updateAvatarListener } from "./handlers/updateAvatarLisener.mjs";
 import { getListning } from "./api/listings/singleListning.mjs";
+import { deleteListingHandler } from "./handlers/deleteListning.mjs"; 
 
 
 const path = location.pathname;
@@ -82,11 +83,18 @@ if (path === "/pages/my-profile/") {
    setCreateListingListener();
  }
 
+ // Update Avatar
  if (path === "/pages/my-profile/") {
   updateAvatarListener ();
  }
 
-
+// Get single listing by logged in user
  if (path === "/pages/my-listing/") {
   getListning();
 }
+
+
+if (path === "/pages/my-listing/") {
+  deleteListingHandler();
+}
+ 

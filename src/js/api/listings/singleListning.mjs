@@ -16,6 +16,7 @@ const url =
 
 export async function getListning() {
   try {
+  
     const response = await authFetch(url);
     const listing = await response.json();
     const media = listing.media;

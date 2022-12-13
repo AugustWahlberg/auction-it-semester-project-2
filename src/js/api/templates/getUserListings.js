@@ -12,7 +12,10 @@
   export function loggedInUserListingTemplate(userListings, type) {
     const listing = document.createElement("div");
     const id = userListings.id;
-    const mainImage = userListings.media[0];
+    let mainImage = userListings.media[0];
+    if (userListings.media.length === 0) {
+      mainImage = "/src/assets/photos/default-photo-listing.png";
+    }
     const bidEnds = userListings.endsAt;
     const timestamp = new Date(bidEnds).getTime();
     const day = new Date(timestamp).getDate();

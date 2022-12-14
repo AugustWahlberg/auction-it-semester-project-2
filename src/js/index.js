@@ -9,9 +9,14 @@ import { setCreateListingListener } from "./handlers/createListing.mjs";
 import { updateAvatarListener } from "./handlers/updateAvatarLisener.mjs";
 import { getListning } from "./api/listings/singleListning.mjs";
 import { deleteListingHandler } from "./handlers/deleteListning.mjs"; 
+import { openCreateListing } from "./pages/listings";
 
 
 const path = location.pathname;
+
+if (path === "/pages/listings/")  {
+  openCreateListing();
+}
 
 
 if (path === "/")  {
@@ -79,7 +84,7 @@ if (path === "/pages/my-profile/") {
 
 // CREATE POST
 
- if (path === "/pages/my-profile/") {
+ if (path === "/pages/my-profile/" || path === "/pages/listings/") {
    setCreateListingListener();
  }
 

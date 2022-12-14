@@ -64,7 +64,7 @@
       </div>
 
       <div class="justify-center pt-4">
-        <button class="create-new-button flex items-center mx-auto mb-3" id="visitBtn"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 m-2">
+        <button class="create-new-button flex items-center mx-auto mb-3" id="listingsCreateNewBtn"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 m-2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>New Listing</button>
       </div>
@@ -91,6 +91,76 @@
             
         </div>
     </div>
+
+
+    <!-- New listing modal starts here-->
+ <div class="modal-bg hidden" id="newListingModal">
+
+  <div class="modal w-modal-form">
+    <div class="border-b px-4 py-2 flex justify-between">
+    <h3 class="text-header font-bold">Create New listing</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-modal close-profile-create-listing-modal">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  </div>
+    <div class="p-3">
+
+      <form id="createListing" method="post" action="/listings">
+
+        <div class="form-outline mb-4">
+          <label class="form-label block">*Title</label>
+          <input type="text" name="title" class="form-control-input" title="Title" required/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" >Description</label>
+          <textarea name="description" class="form-control-input h-28" type="text-area" id="form3Example3cg"></textarea>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" >Tag 1</label>
+          <input type="text" name="tag1" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" >Tag 2</label>
+          <input type="text" name="tag2" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" >*Add main image</label>
+          <input type="url" name="media1" class="form-control-input" required/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label">Add sub image</label>
+          <input type="url" name="media2" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label">Add sub image</label>
+          <input type="url" name="media3" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label">*Auction end time</label>
+          <input type="datetime-local" name="endsAt" class="form-control-input" required/>
+        </div>
+
+        <div class="m-2 text-center hidden" id="feedback-reg"> <i class="fa-3x fa-solid fa-square-check"> </i> You have successfully registered a user
+        </div>
+
+        <div class="flex justify-center items-center border-t p-3">
+          <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-profile-create-listing-modal">Cancel</button>
+          <button class="hp-button modal-btn bg-succ-green bg-opacity-80 confirm-profile-new-lsiting">Create</button>
+        </div>
+      </form>
+      
+    </div>
+    
+  </div>
+</div>
+<!--New listing modal ends here-->
     </main>
 
     <footer>

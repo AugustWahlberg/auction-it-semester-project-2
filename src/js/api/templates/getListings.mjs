@@ -11,20 +11,21 @@ import { dateOptions } from "../listings/constants.mjs";
     console.log();
   }
  
-  export function listingTemplate(postData, type) {
+  export function listingTemplate(listingData, type) {
     const listing = document.createElement("div");
-    const id = postData.id;
-    let mainImage = postData.media[0];
-    if (postData.media.length === 0) {
+    const id = listingData.id;
+    let mainImage = listingData.media[0];
+    if (listingData.media.length === 0) {
       mainImage = "/src/assets/photos/default-photo-listing.png";
     }
     
     const dateTimeFormat = new Intl.DateTimeFormat("fr-FR", dateOptions);
     
-    const bidEnds = new Date(postData.endsAt);
+    const bidEnds = new Date(listingData.endsAt);
     let formatedBidEnds = dateTimeFormat.format(bidEnds);
 
-    const title = postData.title;
+    const title = listingData.title;
+    const tags = listingData.tags;
   
     listing.classList.add("post");
     listing.setAttribute("id", id);
@@ -43,9 +44,7 @@ import { dateOptions } from "../listings/constants.mjs";
                   Bud ends: ${formatedBidEnds}
                 </p>
               </div>
-              <div class="px-6 pb-4">
-                <span class="tag">#tag1</span>
-                <span class="tag">#tag2</span>
+              <div class="px-6 pb-4" id="tags">
               </div>
               <div class="flex justify-center pb-4"> 
                 <button class="see-more-btn" id="seeMoreBtn">See more</button>
@@ -53,5 +52,13 @@ import { dateOptions } from "../listings/constants.mjs";
             </div>
           </div>
   `;
+
+  const tagsElement = listing.querySelector("#tags");
+  for (let i = 0; i < tags.length; i++) {
+    const tag = document.createElement("div");
+    tag.classList.add('tags');
+    tag.innerText = tags[i];
+    tagsElement.appendChild(tag);
+  }
     return listing;
   }

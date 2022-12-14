@@ -81,6 +81,8 @@ for (let i = 0; i < media.length; i++) {
   }
 }
 
+
+
 export async function getBidHistory() {
   const response = await authFetch(url);
     const listing = await response.json();

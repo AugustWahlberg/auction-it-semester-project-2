@@ -47,7 +47,7 @@ import { dateOptions } from "../listings/constants.mjs";
               <div class="px-6 pb-4" id="tags">
               </div>
               <div class="flex justify-center pb-4"> 
-                <button class="see-more-btn" id="seeMoreBtn">See more</button>
+              <a href="/pages/user-listing/?id=${id}"><button class="see-more-btn" id="seeMoreBtn">See more</button></a>
               </div>
             </div>
           </div>

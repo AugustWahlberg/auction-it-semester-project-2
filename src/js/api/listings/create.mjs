@@ -17,8 +17,7 @@ export async function create(listingData) {
       method,
       body: JSON.stringify(listingData)
     });
-    const listing = await response.json();
   
     // Return the parsed JSON data
-    return listing;
+    return response;
   }

@@ -129,4 +129,8 @@
   .form-success {
     @apply bg-succ-green bg-opacity-20 text-succ-green p-2 text-center;
   }
+
+  .tags {
+    @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2;
+  }
 }

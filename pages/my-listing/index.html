@@ -69,16 +69,13 @@
           <!-- card starts -->
 
           <div class="max-w-xl md:min-w-myListning rounded overflow-hidden shadow-lg mt-2" id="listingByUser">
-            <img class="w-full h-80 object-cover" src="/src/assets/photos/default-photo-listing.png" alt="Main Image" id="myListingMainImage">
+            <img class="w-full h-80 object-cover border border-sky-blue" src="/src/assets/photos/default-photo-listing.png" alt="Main Image" id="myListingMainImage">
             <div class="px-6 py-4">
 
                <!-- Sub picture start -->
 
-              <div class="flex">
-                <img class="h-10 w-10 m-2 border border-sea-blue" src="/src/assets/photos/default-photo-listing.png" alt="">
-                <img class="h-10 w-10 m-2" src="/src/assets/photos/default-photo-listing.png" alt="">
-                <img class="h-10 w-10 m-2" src="/src/assets/photos/default-photo-listing.png" alt="">
-                <img class="h-10 w-10 m-2" src="/src/assets/photos/default-photo-listing.png" alt="">
+              <div class="flex" id="images-small">
+                
               </div>
 
               <!-- Sub picture ends -->
@@ -88,10 +85,7 @@
                
               </p>
             </div>
-            <div class="px-6 pt-4 pb-2">
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag 1</span>
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag 2</span>
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag 3</span>
+            <div class="px-6 pt-4 pb-2" id="tags">
             </div>
 
             <!-- Standing bid starts -->
@@ -130,49 +124,7 @@
       <h5 class="text-xl font-bold leading-none text-olive-green">Bid History</h5>
  </div>
  <div class="flow-root">
-      <ul role="list">
-          <li class="py-3 sm:py-4 border-b-2">
-              <div class="flex items-center space-x-4">
-                  <div class="flex-shrink-0">
-                      <img class="w-8 h-8 rounded-full" src="/src/assets/default-photo-listing.png" alt="Neil image">
-                  </div>
-                  <div class="flex-1 min-w-0">
-                      <p class="text-sm font-medium">
-                          Neil Sims
-                      </p>
-
-                      <span class="text-sm font-medium flex">
-                        <p> 22-12-22 -</p>
-                        <p>18:00</p>
-                      </span>
-                  </div>
-                  <div class="inline-flex items-center text-base font-semibold">
-                      100
-                  </div>
-              </div>
-          </li>
-
-          <li class="py-3 sm:py-4">
-            <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0">
-                    <img class="w-8 h-8 rounded-full" src="/src/assets/default-photo-listing.png" alt="Neil image">
-                </div>
-                <div class="flex-1 min-w-0">
-                    <p class="text-sm font-medium">
-                        Neil Sims
-                    </p>
-
-                    <span class="text-sm font-medium flex">
-                      <p> 22-12-22 -</p>
-                      <p>18:00</p>
-                    </span>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold">
-                    100
-                </div>
-            </div>
-        </li>
-    
+      <ul role="list" id="bidHistory">
       </ul>
  </div>
 </div>

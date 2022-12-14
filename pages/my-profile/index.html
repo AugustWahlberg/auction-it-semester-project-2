@@ -156,30 +156,43 @@
       <form id="createListing" method="post" action="/listings">
 
         <div class="form-outline mb-4">
-          <label class="form-label block" for="form3Example2cg">*Title</label>
-          <input type="text" name="title" id="form3Example2cg" class="form-control-input" title="Title" required/>
+          <label class="form-label block">*Title</label>
+          <input type="text" name="title" class="form-control-input" title="Title" required/>
         </div>
 
-        
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">Description</label>
+          <label class="form-label" >Description</label>
           <textarea name="description" class="form-control-input h-28" type="text-area" id="form3Example3cg"></textarea>
         </div>
 
-
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example4cg">Tags</label>
-          <input type="text" name="tags" id="form3Example4cg" class="form-control-input"/>
+          <label class="form-label" >Tag 1</label>
+          <input type="text" name="tag1" class="form-control-input"/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example4cg">Add image</label>
-          <input type="url" name="media" id="form3Example4cg" class="form-control-input" required/>
+          <label class="form-label" >Tag 2</label>
+          <input type="text" name="tag2" class="form-control-input"/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example4cg">*Auction end time</label>
-          <input type="datetime-local" name="endsAt" id="form3Example4cg" class="form-control-input" required/>
+          <label class="form-label" >Add main image</label>
+          <input type="url" name="media1" class="form-control-input" required/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label">Add sub image</label>
+          <input type="url" name="media2" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label">Add sub image</label>
+          <input type="url" name="media3" class="form-control-input"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label">*Auction end time</label>
+          <input type="datetime-local" name="endsAt" class="form-control-input" required/>
         </div>
 
         <div class="m-2 text-center hidden" id="feedback-reg"> <i class="fa-3x fa-solid fa-square-check"> </i> You have successfully registered a user

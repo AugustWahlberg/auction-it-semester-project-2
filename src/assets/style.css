@@ -21,7 +21,7 @@
   }
 
   .hp-button {
-    @apply bg-olive-green bg-opacity-80 hover:bg-opacity-100 rounded-lg p-2 h-11 m-3 block w-40 md:h-14 md:w-60 mx-auto font-bold text-button-sm md:text-button;
+    @apply block bg-olive-green bg-opacity-80 hover:bg-opacity-100 rounded-lg p-2 m-3 h-11 w-36 md:h-14 md:w-60 mx-auto font-bold text-button-sm md:text-button;
   }
 
   .modal-bg {
@@ -33,7 +33,7 @@
   }
 
   .modal-btn {
-    @apply w-40 h-10 bg-opacity-60 w-28 h-10 sm:w-32 sm:h-11 md:w-40 md:h-12;
+    @apply w-40 h-10 bg-opacity-60 w-28 h-10 sm:w-32 sm:h-11 md:w-36 md:h-12;
   }
 
   .active-nav {

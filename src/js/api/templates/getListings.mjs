@@ -1,3 +1,5 @@
+import { dateOptions } from "../listings/constants.mjs";
+  
   /**
   * Function to render listings
   * @param {object} postDataList
@@ -16,13 +18,12 @@
     if (postData.media.length === 0) {
       mainImage = "/src/assets/photos/default-photo-listing.png";
     }
-    const bidEnds = postData.endsAt;
-    const timestamp = new Date(bidEnds).getTime();
-    const day = new Date(timestamp).getDate();
-    const month = new Date(timestamp).getMonth() + 1;
-    const year = new Date(timestamp).getFullYear();
-    const time = new Date(timestamp).toLocaleTimeString();
-    const formatedBidEnds = `${day}/${month}/${year} - ${time}`;
+    
+    const dateTimeFormat = new Intl.DateTimeFormat("fr-FR", dateOptions);
+    
+    const bidEnds = new Date(postData.endsAt);
+    let formatedBidEnds = dateTimeFormat.format(bidEnds);
+
     const title = postData.title;
   
     listing.classList.add("post");

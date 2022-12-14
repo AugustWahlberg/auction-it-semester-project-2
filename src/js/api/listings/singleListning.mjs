@@ -2,6 +2,7 @@
 
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
+import { dateOptions } from "./constants.mjs";
 
 const userListing = document.getElementById(
   "listingByUser"
@@ -23,7 +24,8 @@ export async function getListning() {
     const title = listing.title;
     const name = listing.seller.name;
     const description = listing.description;
-    const endsAt = listing.endsAt;
+    const endsAt = new Date (listing.endsAt);
+    let formatedEndDate = endsAt.toLocaleString("fr-FR", dateOptions);
     const bids = listing.bids;
     const tags = listing.tags;
     const myListingName = document.getElementById("myListingName");
@@ -70,7 +72,7 @@ for (let i = 0; i < media.length; i++) {
     myListingName.innerText = name;
     myListingTitle.textContent = title;
     myListingDescription.innerHTML = description;
-    myListingBidEnds.innerHTML = endsAt;
+    myListingBidEnds.innerHTML = formatedEndDate;
 
     getBidHistory();
 
@@ -93,13 +95,7 @@ export async function getBidHistory() {
     const name = bids[i].bidderName;
     const date = new Date (bids[i].created);
 
-    let formatedDate = date.toLocaleString("en-US", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    let formatedDate = date.toLocaleString("fr-FR", dateOptions);
 
       const bidHistoryBox = document.createElement("li");
       bidHistoryBox.classList.add ('py-3', 'sm:py-4', 'border-b-2');

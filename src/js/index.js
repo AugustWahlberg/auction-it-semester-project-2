@@ -32,16 +32,26 @@ if (path !== "/") {
 }
 
 
-// VIEW LISTINGS ON FEED
-
+// viewListings with
 async function viewListings() {
   const listings = await listingMethods.getListings();
-  //console.log(listings)
   const container = document.getElementById("listingsFeed");
   templates.renderListingTemplates(listings, container);
-  // searchPosts(posts);
-  // filterPosts(posts);
+  const searchInput = document.getElementById("search");
+  searchInput.addEventListener("keyup", (e) => {
+    const query = e.target.value.trim().toLowerCase();
+    const matchingListings = listings.filter(function(listing) {
+      return listing.title.toLowerCase().includes(query);
+    });
+    container.innerHTML = "";
+    if (matchingListings.length > 0) {
+      templates.renderListingTemplates(matchingListings, container);
+    } else {
+      container.innerHTML = "No posts found with that title.";
+    }
+  });
 }
+
 
 if (path === "/pages/listings/") {
   viewListings();

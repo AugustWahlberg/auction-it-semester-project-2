@@ -1,5 +1,5 @@
 import { authFetch } from "../authFetch.mjs";
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_AUCTION_URL } from "../constants.mjs";
 const action = "/listings";
 const method = "delete";
 
@@ -17,7 +17,7 @@ export async function deleteListing(listingID) {
   const id = params.get("id");
   listingID = id;
 
-  const deleteListingURL = `${API_SOCIAL_URL}${action}/${listingID}`;
+  const deleteListingURL = `${API_AUCTION_URL}${action}/${listingID}`;
   
     // Make the POST request and parse the response as JSON
     const response = await authFetch (deleteListingURL, {

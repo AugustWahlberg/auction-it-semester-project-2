@@ -1,6 +1,6 @@
 /* Getting API data to Post site*/
 
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 import { dateOptions } from "./constants.mjs";
 
@@ -13,7 +13,7 @@ const action = "/listings/";
 const id = params.get("id");
 
 const url =
-  API_SOCIAL_URL + action + id + "?_seller=true&_bids=true";
+API_AUCTION_URL + action + id + "?_seller=true&_bids=true";
 
 export async function getListning() {
   try {

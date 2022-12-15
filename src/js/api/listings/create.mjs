@@ -1,5 +1,5 @@
 import { authFetch } from "../authFetch.mjs";
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_AUCTION_URL } from "../constants.mjs";
 const action = "/listings";
 const method = "post";
 
@@ -10,7 +10,7 @@ const method = "post";
  */
 export async function create(listingData) {
 
-  const createListingURL = API_SOCIAL_URL+action;
+  const createListingURL = API_AUCTION_URL+action;
   
     // Make the POST request and parse the response as JSON
     const response = await authFetch (createListingURL, {

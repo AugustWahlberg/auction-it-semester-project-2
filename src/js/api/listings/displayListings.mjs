@@ -1,4 +1,4 @@
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 const action = "/listings";
@@ -9,7 +9,7 @@ const action = "/listings";
  */
 
 export async function getListings() {
-  const allPostsURL = `${API_SOCIAL_URL}${action}`;
+  const allPostsURL = `${API_AUCTION_URL}${action}`;
   const response = await authFetch (allPostsURL);
   const allListings = await response.json();
   // console.log(allPosts)

@@ -10,9 +10,14 @@ import { updateAvatarListener } from "./handlers/updateAvatarLisener.mjs";
 import { getListning } from "./api/listings/singleListning.mjs";
 import { deleteListingHandler } from "./handlers/deleteListning.mjs"; 
 import { openCreateListing } from "./pages/listings";
+import { setEditListingListener } from "./handlers/editListning.mjs";
 
 
 const path = location.pathname;
+
+if (path === "/pages/my-listing/") {
+  setEditListingListener();
+}
 
 if (path === "/pages/listings/")  {
   openCreateListing();

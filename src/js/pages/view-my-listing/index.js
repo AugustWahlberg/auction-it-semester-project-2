@@ -1,3 +1,14 @@
+
+import { API_AUCTION_URL } from "../../api/constants.mjs"; 
+import { authFetch } from "../../api/authfetch.mjs";
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const action = "/listings/";
+const id = params.get("id");
+
+const url =
+API_AUCTION_URL + action + id + "?_seller=true&_bids=true";
+
 //Create new listing variables
 const deleteListningBtn = document.getElementById(
   "delete-listing-modal-btn"
@@ -61,16 +72,10 @@ const confirmEditListning =
     ".confirm-edit-lisiting"
   );
 
-//Create new Listing Functions
-editListningBtn.addEventListener(
-  "click",
-  function () {
-    editListingModal.classList.remove("hidden");
-  }
-);
 cancelEditModal.addEventListener(
   "click",
   function () {
+    location.reload();
     editListingModal.classList.add("hidden");
   }
 );
@@ -88,3 +93,29 @@ confirmEditListning.addEventListener(
     editListingModal.classList.add("hidden");
   }
 );
+
+
+//Edit new Listing Functions
+editListningBtn.addEventListener(
+  "click", showEditListingModal
+  );
+
+async function showEditListingModal(event) {
+  event.preventDefault();
+    const response = await authFetch(url);
+    const listing = await response.json();
+    const editListingForm = document.getElementById("editListing");
+    // Set the form field values to the values of the post
+    editListingForm.title.value = listing.title;
+    editListingForm.description.value = listing.description;
+    const tags = listing.tags || [];
+  const media = listing.media || [];
+    editListingForm.tag1.value = tags[0] || "";
+  editListingForm.tag2.value = tags[1] || "";
+  editListingForm.media1.value = media[0] || "";
+  editListingForm.media2.value = media[1] || "";
+  editListingForm.media3.value = media[2] || "";
+    // Show the modal
+    editListingModal.classList.remove("hidden");
+  }
+  

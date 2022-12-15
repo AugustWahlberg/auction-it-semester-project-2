@@ -169,57 +169,53 @@
   </div>
     <div class="p-3">
 
-      <form class="" id="edit-listing" method="post" action="/auth/register">
+      <form id="editListing" method="post" action="/listings">
 
         <div class="form-outline mb-4">
           <label class="form-label block">*Title</label>
-          <input type="text" name="title" class="form-control-input" title="title"/>
+          <input type="text" name="title" class="form-control-input" title="Title" required/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label">Description</label>
-          <input type="textarea" name="listingdescription" class="form-control-input h-40"/>
+          <label class="form-label" >Description</label>
+          <textarea name="description" class="form-control-input h-28" type="text-area" id="form3Example3cg"></textarea>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label">*Aution end date</label>
-          <input type="date" name="date" class="form-control-input"/>
+          <label class="form-label" >Tag 1</label>
+          <input type="text" name="tag1" class="form-control-input"/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label">*Auction end time</label>
-          <input type="time" name="time" class="form-control-input"/>
+          <label class="form-label" >Tag 2</label>
+          <input type="text" name="tag2" class="form-control-input"/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label">Add main Image</label>
-          <input type="url" name="avatar" class="form-control-input"/>
+          <label class="form-label" >*Add main image</label>
+          <input type="url" name="media1" class="form-control-input" required/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label">Add sub image 1</label>
-          <input type="url" name="avatar" class="form-control-input"/>
+          <label class="form-label">Add sub image</label>
+          <input type="url" name="media2" class="form-control-input"/>
         </div>
 
         <div class="form-outline mb-4">
-          <label class="form-label">Add sub image 2</label>
-          <input type="url" name="avatar" class="form-control-input"/>
-        </div>
-
-        <div class="form-outline mb-4">
-          <label class="form-label">Add sub image 3</label>
-          <input type="url" name="avatar" class="form-control-input"/>
+          <label class="form-label">Add sub image</label>
+          <input type="url" name="media3" class="form-control-input"/>
         </div>
 
         <div class="m-2 text-center hidden" id="feedback-reg"> <i class="fa-3x fa-solid fa-square-check"> </i> You have successfully registered a user
         </div>
+
+        <div class="flex justify-center items-center border-t p-3">
+          <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-edit-listing-modal">Cancel</button>
+          <button class="hp-button modal-btn bg-succ-green bg-opacity-80 confirm-edit-lisiting">Save</button>
+        </div>
       </form>
-      
     </div>
-    <div class="flex justify-center items-center border-t p-3">
-      <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-edit-listing-modal">Cancel</button>
-      <button class="hp-button modal-btn bg-succ-green bg-opacity-80 confirm-edit-lisiting">Save</button>
-    </div>
+    
   </div>
 </div>
 <!--Edit listing modal ends here-->

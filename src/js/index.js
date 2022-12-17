@@ -13,8 +13,6 @@ import { deleteListingHandler } from "./handlers/deleteListning.mjs";
 import * as viewMyListing from "./pages/view-my-listing/index.js";
 import { setEditListingListener } from "./handlers/editListning.mjs";
 import { getListingByUser } from "./api/listings/userListing.mjs";
-import { bidOnListing } from "./handlers/bidHandler.mjs";
-
 
 
 //console.log("imported");
@@ -37,7 +35,7 @@ if (path === "/pages/mylisting/"){
 // Nav action - WORKING
 
   if (path === "/pages/listings/" || 
-  path === "/pages/howitWorks/" ||
+  path === "/pages/howitworks/" ||
   path === "/pages/mylisting/" ||
   path === "/pages/myprofile/" ||
   path === "/pages/userlisting/")

@@ -61,70 +61,80 @@
         <p>Listing > </p>
         <p>Header </p>
       </div>
- 
-        <div class="max-w-screen flex flex-wrap mb-20 justify-center">
 
-          <!-- card starts -->
+      <div class="max-w-screen flex flex-wrap mb-20 justify-center">
 
-          <div class="max-w-xl rounded overflow-hidden shadow-lg mt-2" id="listingByUser">
+        <!-- card starts -->
+
+        <div class="max-w-xl md:min-w-myListning rounded overflow-hidden shadow-lg mt-2" id="listingByUser">
+          <img class="w-full h-80 object-cover border border-sky-blue" src="/src/assets/photos/default-photo-listing.png" alt="Main Image" id="myListingMainImage">
+          <div class="px-6 py-4">
+
+             <!-- Sub picture start -->
+
+            <div class="flex" id="images-small">
+              
+            </div>
+
+            <!-- Sub picture ends -->
+
+            <div class="font-bold text-xl mb-2" id="myListingTitle"> <span class="text-sm pl-3" id="myListingName"></span></div>
+            <p class="text-para md:text-base" id="myListingDescription">
+            </p>
+
+          </div>
+          <div class="px-6 pt-4 pb-2" id="tags">
+          </div>
+
+          <!-- Standing bid starts -->
+          <div>
+            <h3 class="pl-6 text-header-md underline underline-offset-2">Current standing bid</h3>
+            <p class="pl-6 text-header-sm font-bold" id="myListingStandingBid">0 credits</p>
+          </div>
+           <!-- Standing bid ends -->
+
+            <!-- date starts -->
+          <div class="pb-4">
+            <h3 class="pl-6 text-header-md underline underline-offset-2 pt-2">Bid ends</h3>
+            <span class="flex items-end">
+              <p class="pl-6 text-header-sm font-bold" id="myListingBidEnds">22.02.23</p>
+       
+            </span>
             
+          </div>
+           <!-- Standing bid Ends -->
+
+            <!-- Standing bid Ends -->
+
+            <div class="flex justify-center items-center border-t py-3">
+
+              <form class="p-4" method="post" id="bidForm">
+                
+                <div class="form-outline mb-4 mpx-2 p-4 w-bid-input">
+                  <label class="form-label font-semibold" >Type Your Bid</label>
+                    <input type="number" name="amount" class="form-control-input p-4 h-8" title="amount"/>
+                  <div class="form-error hidden" id="email-error">Please enter your @noroff email address</div>
+                </div>
+                <button class="hp-button modal-btn bg-succ-green bg-opacity-80 " id="bid-modal-btn">Bid</button>
+              </form>
+            </div>
+          </div>
+        </div>
         <!-- card ends -->  
     </div>
 
 
-    <div class="max-w-screen flex flex-wrap mb-20 justify-center">
+  <div class="max-w-screen flex flex-wrap mb-20 justify-center">
 
-      
-<div class="w-full max-w-xl p-4 border rounded sm:p-8 border-sea-gren bg-opacity-20">
-  <div class="flex items-center justify-between mb-4">
-      <h5 class="text-xl font-bold leading-none text-olive-green">Bid History</h5>
- </div>
- <div class="flow-root">
-      <ul role="list">
-          <li class="py-3 sm:py-4 border-b-2">
-              <div class="flex items-center space-x-4">
-                  <div class="flex-shrink-0">
-                      <img class="w-8 h-8 rounded-full" src="/src/assets/default-photo-listing.png" alt="Neil image">
-                  </div>
-                  <div class="flex-1 min-w-0">
-                      <p class="text-sm font-medium">
-                          Neil Sims
-                      </p>
-
-                      <span class="text-sm font-medium flex">
-                        <p> 22-12-22 -</p>
-                        <p>18:00</p>
-                      </span>
-                  </div>
-                  <div class="inline-flex items-center text-base font-semibold">
-                      100
-                  </div>
-              </div>
-          </li>
-
-          <li class="py-3 sm:py-4">
-            <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0">
-                    <img class="w-8 h-8 rounded-full" src="/src/assets/default-photo-listing.png" alt="Neil image">
-                </div>
-                <div class="flex-1 min-w-0">
-                    <p class="text-sm font-medium">
-                        Neil Sims
-                    </p>
-
-                    <span class="text-sm font-medium flex">
-                      <p> 22-12-22 -</p>
-                      <p>18:00</p>
-                    </span>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold">
-                    100
-                </div>
-            </div>
-        </li>
     
-      </ul>
- </div>
+<div class="w-full max-w-xl p-4 border rounded sm:p-8 border-sea-gren bg-opacity-20">
+<div class="flex items-center justify-between mb-4">
+    <h5 class="text-xl font-bold leading-none text-olive-green">Bid History</h5>
+</div>
+<div class="flow-root">
+    <ul role="list" id="bidHistory">
+    </ul>
+</div>
 </div>
 </div>
 

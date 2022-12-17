@@ -12,6 +12,9 @@ import { getListing } from "./api/listings/singleListning.mjs";
 import { deleteListingHandler } from "./handlers/deleteListning.mjs";
 import * as viewMyListing from "./pages/view-my-listing/index.js";
 import { setEditListingListener } from "./handlers/editListning.mjs";
+import { getListingByUser } from "./api/listings/userListing.mjs";
+import { bidOnListing } from "./handlers/bidHandler.mjs";
+
 
 
 //console.log("imported");
@@ -128,4 +131,8 @@ if (path === "/pages/mylisting/") {
 
 if (path === "/pages/mylisting/") {
   setEditListingListener();
+}
+
+if (path === "/pages/userlisting/") {
+  getListingByUser();
 }

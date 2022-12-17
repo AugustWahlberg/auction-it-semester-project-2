@@ -17,9 +17,10 @@
   </head>
   <body>
  <!-- Navbar start -->
- <header>
+<!-- Navbar start -->
+<header>  <!-- header start -->
   <div>
-  <nav class="bg-pool-blue mx-auto flex uppercase w-screen text-ctn-white text-opacity-80 box-content"> 
+  <nav class="bg-pool-blue mx-auto flex uppercase w-screen text-ctn-white text-opacity-80 box-content"> <!-- header start -->
 
     <div class="w-28 logo bg-sea-blue hover:bg-opacity-80 md:w-40 p-4 mx-auto">
       <img class="h-12 w-12 mx-auto md:h-16 md:w-16" src="/src/assets/photos/auction_it_logo_white.png" alt="logo" id="home-btn">
@@ -41,7 +42,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg> 
     </div>
-
+  </nav>
   </div>
     <!-- mobile menu here -->
     <div class="block bg-pool-blue md:hidden w-screen items-center h-auto mx-auto justify-center uppercase hidden" id="mobile-menu">
@@ -52,8 +53,7 @@
       </ul>
     </div>
 
-  </nav>
-</header>
+</header>  <!-- header ends -->
   <!-- Navbar ends -->
     
     <main>
@@ -106,18 +106,19 @@
   <form class="" id="contact-us-form" method="post" action="/auth/login">
 
     <div class="form-outline mb-4">
-      <label class="form-label" for="form3Example2cg">Subject</label>
+      <label class="form-label">Subject</label>
       <input type="text" name="subject" class="form-control-input" required title="Provide a subject"/>
     </div>
 
     <div class="form-outline mb-4">
-      <label class="form-label" for="form3Example3cg">Question/feeback</label>
-      <input type="textarea" name="contact-us" class="form-control-input h-40"/>
+      <label class="form-label">Question/feeback</label>
+      <textarea name="question" class="form-control-input"></textarea>
+
     </div>
 
     <div class="form-outline mb-4">
-      <label class="form-label" for="form3Example2cg">Your email</label>
-      <input type="email" name="email" class="form-control-input" required pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Only @(stud.)noroff.no domains are allowed to login"/>
+      <label class="form-label" >Your email</label>
+      <input type="email" name="email" class="form-control-input"/>
     </div>
 
   </form>

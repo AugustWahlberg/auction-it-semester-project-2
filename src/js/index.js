@@ -1,120 +1,131 @@
-import { setRegisterFormListener, setLoginFormListener} from "./handlers/index.mjs";
 import * as homeModals from "./pages/home/index.mjs";
-import { navAction } from "./handlers/navigation.mjs"; 
-import * as templates from "./api/templates/index.mjs";
+import {setLoginFormListener} from "./handlers/index.mjs";
+import { navAction } from "./handlers/navigation.mjs";
+import { setRegisterFormListener } from "./handlers/index.mjs";
 import * as listingMethods from "./api/listings//index.mjs";
+import * as templates from "./api/templates/index.mjs";
 import { setAvatarToNav } from "./handlers/navigation.mjs";
 import { viewProfile } from "./pages/my-profile/viewProfile.js";
-import { setCreateListingListener } from "./handlers/createListing.mjs";
 import { updateAvatarListener } from "./handlers/updateAvatarLisener.mjs";
-import { getListning } from "./api/listings/singleListning.mjs";
-import { deleteListingHandler } from "./handlers/deleteListning.mjs"; 
-import { openCreateListing } from "./pages/listings";
+import { setCreateListingListener } from "./handlers/createListing.mjs";
+import { getListing } from "./api/listings/singleListning.mjs";
+import { deleteListingHandler } from "./handlers/deleteListning.mjs";
+import * as viewMyListing from "./pages/view-my-listing/index.js";
 import { setEditListingListener } from "./handlers/editListning.mjs";
 
 
+//console.log("imported");
+
 const path = location.pathname;
 
-if (path === "/pages/my-listing/") {
-  setEditListingListener();
-}
-
-if (path === "/pages/listings/")  {
-  openCreateListing();
-}
-
-
 if (path === "/")  {
-homeModals.registerModalActions();
-homeModals.loginModalActions();
-homeModals.visitModalActions();
-setRegisterFormListener();
-setLoginFormListener();
+    setRegisterFormListener();
+    homeModals.registerModalActions();
+    setLoginFormListener();
+    homeModals.loginModalActions();
+    homeModals.visitModalActions();
+    }
+
+if (path === "/pages/mylisting/"){
+  viewMyListing.deleteModalActions()
+  viewMyListing.editModalActions()
 }
 
-if (path !== "/") {
-  navAction();
-}
+// Nav action - WORKING
 
+  if (path === "/pages/listings/" || 
+  path === "/pages/howitWorks/" ||
+  path === "/pages/mylisting/" ||
+  path === "/pages/myprofile/" ||
+  path === "/pages/userlisting/")
+  {
+    navAction();
+  }
 
-// viewListings with
+  // viewListings - WORKING
 async function viewListings() {
   const listings = await listingMethods.getListings();
   const container = document.getElementById("listingsFeed");
-  templates.renderListingTemplates(listings, container);
-  const searchInput = document.getElementById("search");
-  searchInput.addEventListener("keyup", (e) => {
-    const query = e.target.value.trim().toLowerCase();
-    const matchingListings = listings.filter(function(listing) {
-      return listing.title.toLowerCase().includes(query);
-    });
-    container.innerHTML = "";
-    if (matchingListings.length > 0) {
-      templates.renderListingTemplates(matchingListings, container);
-    } else {
-      container.innerHTML = "No posts found with that title.";
-    }
-  });
-}
+  if ( container ) {
+    templates.renderListingTemplates(listings, container);
+  }
 
+  const searchInput = document.getElementById("search");
+
+  if ( searchInput && container ) {
+    searchInput.addEventListener("keyup", (e) => {
+      const query = e.target.value.trim().toLowerCase();
+      const matchingListings = listings.filter(function(listing) {
+        return listing.title.toLowerCase().includes(query);
+      });
+      container.innerHTML = "";
+      if (matchingListings.length > 0) {
+        templates.renderListingTemplates(matchingListings, container);
+      } else {
+        container.innerHTML = "No posts found with that title.";
+      }
+    });
+  }
+}
 
 if (path === "/pages/listings/") {
   viewListings();
 }
 
-//DISPLAY NAVBAR AVATAR
-if (path !== "/" && localStorage.getItem("token")) {
+
+//Display navbar avatar - WORKING
+if (path !== "/"  &&  path !== "/"  && localStorage.getItem("token")) {
   setAvatarToNav();
 }
 
+// View Profile -WORKING
 
-//REDIRECT USER TO LOGGED IN PAGE IF FROM HOMEPAGE
-//THIS ONLY IF THEY HAVE LOGGED IN BEFORE
-if(localStorage.getItem("token") && path === "/") {
-  window.location.replace("/pages/listings/");
-}
-
-
-// View Profile
-
-if (path === "/pages/my-profile/") {
+if (path === "/pages/myprofile/") {
   viewProfile();
 }
 
-
-//-------
-
-//VIEW Logged IN USER Listings
-async function viewUsersListing () {
-  const listings = await listingMethods.fetchLoggedInsListings();
-  console.log(listings)
-  const container = document.getElementById("profileListings");
-  templates.renderloggedInUserListingTemplates (listings, container);
-}
-
-if (path === "/pages/my-profile/") {
-  viewUsersListing();
-}
-
-
-// CREATE POST
-
- if (path === "/pages/my-profile/" || path === "/pages/listings/") {
-   setCreateListingListener();
- }
-
- // Update Avatar
- if (path === "/pages/my-profile/") {
+ // Update Avatar -WORKING
+ if (path === "/pages/myprofile/") {
   updateAvatarListener ();
  }
 
-// Get single listing by logged in user
- if (path === "/pages/my-listing/") {
-  getListning();
+ // Create listing - WORKING
+
+ if (path === "/pages/myprofile/" || path === "/pages/listings/") {
+  setCreateListingListener();
+}
+
+//Redirect logged in user from homepage - WORKING
+
+if(localStorage.getItem("token") && path === "/") {
+  window.location.replace("./pages/listings/");
 }
 
 
-if (path === "/pages/my-listing/") {
+//View logged in user listings - WORKING
+async function viewUsersListings () {
+  const listings = await listingMethods.fetchLoggedInsListings();
+  console.log(listings)
+  const container = document.getElementById("profileListings");
+
+  if ( container && listings ) {
+    templates.renderloggedInUserListingTemplates (listings, container);
+  }
+}
+
+if (path === "/pages/myprofile/") {
+  viewUsersListings();
+}
+
+// Get single listing by logged in user - working
+if (path === "/pages/mylisting/") {
+  getListing();
+}
+
+if (path === "/pages/mylisting/") {
   deleteListingHandler();
 }
- 
+
+if (path === "/pages/mylisting/") {
+  setEditListingListener();
+}

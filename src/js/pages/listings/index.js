@@ -1,4 +1,3 @@
-
 //Create new Listing Functions
 
 export function openCreateListing () {

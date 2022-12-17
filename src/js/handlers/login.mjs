@@ -1,4 +1,3 @@
-
 import { login } from "../api/auth/login.mjs";
 /**
  * Login function to set input from the user into an object

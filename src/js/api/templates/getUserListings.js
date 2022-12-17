@@ -11,7 +11,7 @@ import { dateOptions } from "../listings/constants.mjs";
   }
 
   
-  export function loggedInUserListingTemplate(userListings, type) {
+  export function loggedInUserListingTemplate(userListings) {
     const listing = document.createElement("div");
     const id = userListings.id;
     let mainImage = userListings.media[0];
@@ -40,7 +40,7 @@ import { dateOptions } from "../listings/constants.mjs";
                
               </div>
               <div class="flex justify-center pb-4"> 
-              <a href="/pages/my-listing/?id=${id}"><button class="see-more-btn" id="seeMoreBtn">See more</button></a>
+              <a href="/pages/mylisting/?id=${id}"><button class="see-more-btn" id="seeMoreBtn">See more</button></a>
               </div>
             </div>
           </div>

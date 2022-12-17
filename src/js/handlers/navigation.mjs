@@ -9,12 +9,12 @@ mobileMenuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
-
-homeBtn.addEventListener("click", () => {
-  window.location.href = '/';
-});
+if (homeBtn) {
+  homeBtn.addEventListener("click", () => {
+    window.location.href = '/';
+  });
 }
-
+}
 
 export async function setAvatarToNav() {
   const profileData = await fetchProfile()

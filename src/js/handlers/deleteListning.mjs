@@ -8,13 +8,13 @@ export function deleteListingHandler () {
 document.querySelector(
   ".confirm-delete-listning"
 );
-
- confirmDeleteListning.addEventListener("click", (e) => {
-  e.preventDefault ();
-
-  deleteListing();
-  alert ("Your listing was deleted");
-  window.location.href = '/pages/my-profile/';
-});
-
+if (confirmDeleteListning) {
+  confirmDeleteListning.addEventListener("click", (e) => {
+    e.preventDefault ();
+  
+    deleteListing();
+    alert ("Your listing was deleted");
+    window.location.href = '/pages/myprofile/';
+  });
+}
 }

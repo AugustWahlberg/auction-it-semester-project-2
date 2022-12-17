@@ -11,7 +11,7 @@ import { dateOptions } from "../listings/constants.mjs";
     console.log();
   }
  
-  export function listingTemplate(listingData, type) {
+  export function listingTemplate(listingData) {
     const listing = document.createElement("div");
     const id = listingData.id;
     let mainImage = listingData.media[0];
@@ -30,12 +30,6 @@ import { dateOptions } from "../listings/constants.mjs";
     listing.classList.add("post");
     listing.setAttribute("id", id);
   
-    // if (type === "multiple") {
-    //   post.addEventListener("click", (e) => {
-    //     // displaySinglePost(postData);
-    //   });
-    // }
-  
     listing.innerHTML = `<div class="w-listings-small rounded overflow-hidden shadow-lg m-5">
               <img class="w-full h-60 object-cover" src="${mainImage}" alt="Mountain">
               <div class="px-6 py-4">
@@ -47,7 +41,7 @@ import { dateOptions } from "../listings/constants.mjs";
               <div class="px-6 pb-4" id="tags">
               </div>
               <div class="flex justify-center pb-4"> 
-              <a href="/pages/user-listing/?id=${id}"><button class="see-more-btn" id="seeMoreBtn">See more</button></a>
+              <a href="/pages/userlisting/?id=${id}"><button class="see-more-btn" id="seeMoreBtn">See more</button></a>
               </div>
             </div>
           </div>
@@ -62,5 +56,3 @@ import { dateOptions } from "../listings/constants.mjs";
   }
     return listing;
   }
-
-  

@@ -1,4 +1,3 @@
-
 export function visitModalActions() {
   //Visit confirm variables
 const showVisitModal =
@@ -16,30 +15,40 @@ const proceedVisit = document.querySelector(
 );
 
 //Visit confirm functions
-showVisitModal.addEventListener(
-"click",
-function () {
-  visitModal.classList.remove("hidden");
+if (showVisitModal) {
+  showVisitModal.addEventListener(
+    "click",
+    function () {
+      visitModal && cancelVisitModal && closeVisitModal &&  visitModal.classList.remove("hidden");
+    }
+    );
 }
-);
-cancelVisitModal.addEventListener(
-"click",
-function () {
-  visitModal.classList.add("hidden");
-}
-);
 
-closeVisitModal.addEventListener(
-"click",
-function () {
-  visitModal.classList.add("hidden");
+if (cancelVisitModal) {
+  cancelVisitModal.addEventListener(
+    "click",
+    function () {
+      visitModal.classList.add("hidden");
+    }
+    );
 }
-);
 
-proceedVisit.addEventListener(
-"click",
-function () {
-  window.location.href = "/pages/listings/";
-}
-);
+  if (closeVisitModal) {
+    closeVisitModal.addEventListener(
+      "click",
+      function () {
+        visitModal.classList.add("hidden");
+      }
+      );
+  }
+ 
+  if ( proceedVisit) {
+    proceedVisit.addEventListener(
+      "click",
+      function () {
+        window.location.href = "/pages/listings/";
+      }
+      );
+  }
+ 
 }

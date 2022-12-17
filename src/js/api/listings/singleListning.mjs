@@ -15,72 +15,75 @@ const id = params.get("id");
 const url =
 API_AUCTION_URL + action + id + "?_seller=true&_bids=true";
 
-export async function getListning() {
+export async function getListing() {
   try {
+
+    if (userListing) {
+      const response = await authFetch(url);
+      const listing = await response.json();
+      const media = listing.media;
+      const title = listing.title;
+      const name = listing.seller.name;
+      const description = listing.description;
+      const endsAt = new Date (listing.endsAt);
+      let formatedEndDate = endsAt.toLocaleString("fr-FR", dateOptions);
+      const bids = listing.bids;
+      const tags = listing.tags;
+      const myListingName = document.getElementById("myListingName");
+      const myListingTitle = document.getElementById("myListingTitle");
+      const myListingStandingBid = document.getElementById("myListingStandingBid");
+      const myListingBidEnds = document.getElementById("myListingBidEnds");
+      const myListingDescription = document.getElementById("myListingDescription");
+      const myListingMainImage = document.getElementById("myListingMainImage");
+      const microImages = document.getElementById("images-small");
+      const tagsContainer = document.getElementById("tags");
+     // for loop for displaying of small images 
   
-    const response = await authFetch(url);
-    const listing = await response.json();
-    const media = listing.media;
-    const title = listing.title;
-    const name = listing.seller.name;
-    const description = listing.description;
-    const endsAt = new Date (listing.endsAt);
-    let formatedEndDate = endsAt.toLocaleString("fr-FR", dateOptions);
-    const bids = listing.bids;
-    const tags = listing.tags;
-    const myListingName = document.getElementById("myListingName");
-    const myListingTitle = document.getElementById("myListingTitle");
-    const myListingStandingBid = document.getElementById("myListingStandingBid");
-    const myListingBidEnds = document.getElementById("myListingBidEnds");
-    const myListingDescription = document.getElementById("myListingDescription");
-    const myListingMainImage = document.getElementById("myListingMainImage");
-    const microImages = document.getElementById("images-small");
-    const tagsContainer = document.getElementById("tags");
-   // for loop for displaying of small images 
-
-for (let i = 0; i < media.length; i++) {
-  
-  const image = document.createElement("img");
-  image.src = media[i];
-  image.classList.add('h-10', 'w-10', 'm-2', 'border', 'border-1', 'border-sky-blue', 'cursor-pointer');
-  microImages.appendChild(image);
-
-  image.addEventListener('click', () => {
-    const src = image.src;
-    myListingMainImage.src = src;
-  });
-}
-
-// for loop for tags
-
-  for (let i = 0; i < tags.length; i++) {
-    const tag = document.createElement("div");
-    tag.classList.add('tags');
-    tag.innerText = tags[i];
-    tagsContainer.appendChild(tag);
-}
-    if (media.length > 0){
-      myListingMainImage.src = media[0]; 
-    }
+  for (let i = 0; i < media.length; i++) {
     
-    if (bids.length > 0){
-      const bidLength = bids.length - 1;
-      const currentBid = bids[bidLength].amount;
-      myListingStandingBid.innerHTML = currentBid + " Credits";
-    }    
-
-    myListingName.innerText = name;
-    myListingTitle.textContent = title;
-    myListingDescription.innerHTML = description;
-    myListingBidEnds.innerHTML = formatedEndDate;
-
-    getBidHistory();
-
-  } catch (error) {
+    const image = document.createElement("img");
+    image.src = media[i];
+    image.classList.add('h-10', 'w-10', 'm-2', 'border', 'border-1', 'border-sky-blue', 'cursor-pointer');
+    microImages.appendChild(image);
+  
+    image.addEventListener('click', () => {
+      const src = image.src;
+      myListingMainImage.src = src;
+    });
+  }
+  
+  // for loop for tags
+  
+    for (let i = 0; i < tags.length; i++) {
+      const tag = document.createElement("div");
+      tag.classList.add('tags');
+      tag.innerText = tags[i];
+      tagsContainer.appendChild(tag);
+  }
+      if (media.length > 0){
+        myListingMainImage.src = media[0]; 
+      }
+      
+      if (bids.length > 0){
+        const bidLength = bids.length - 1;
+        const currentBid = bids[bidLength].amount;
+        myListingStandingBid.innerHTML = currentBid + " Credits";
+      }    
+  
+      myListingName.innerText = name;
+      myListingTitle.textContent = title;
+      myListingDescription.innerHTML = description;
+      myListingBidEnds.innerHTML = formatedEndDate;
+  
+      getBidHistory();
+  
+    }
+  }
+  catch (error) {
     userListing.innerHTML = "An error occured!";
   }
 }
-
+  
 
 
 export async function getBidHistory() {

@@ -5,6 +5,7 @@ const showLoginModal =
   document.getElementById("loginBtn");
 const loginModal =
   document.getElementById("loginModal");
+  
 const cancelLoginModal = document.querySelector(
   ".cancel-login-modal"
 );
@@ -13,25 +14,34 @@ const closeLoginModal = document.querySelector(
 );
 
 //login functions
-showLoginModal.addEventListener(
-  "click",
-  function () {
-    loginModal.classList.remove("hidden");
-  }
-);
+if (showLoginModal) {
+  showLoginModal.addEventListener(
+    "click",
+    function () {
+      loginModal && cancelLoginModal && closeLoginModal && loginModal.classList.remove("hidden");
+    }
+  );
+}
 
-cancelLoginModal.addEventListener(
-  "click",
-  function () {
-    loginModal.classList.add("hidden");
-  }
-);
+if (cancelLoginModal) {
+  cancelLoginModal.addEventListener(
+    "click",
+    function () {
+      loginModal.classList.add("hidden");
+    }
+  );
+}
 
-closeLoginModal.addEventListener(
-  "click",
-  function () {
-    loginModal.classList.add("hidden");
-  }
-);
+
+if (closeLoginModal)
+{
+  closeLoginModal.addEventListener(
+    "click",
+    function () {
+      loginModal.classList.add("hidden");
+    }
+  );
+}
+
 
 }

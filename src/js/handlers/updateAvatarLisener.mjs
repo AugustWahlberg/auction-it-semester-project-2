@@ -1,8 +1,6 @@
 import { updateAvatar } from "../api/user/updateAvatar.mjs";
 
-
 export function updateAvatarListener () {
-
 const form = document.getElementById("editAvatar");
 
 /**
@@ -16,10 +14,13 @@ const form = document.getElementById("editAvatar");
     const formData = new FormData (formElement);
     const avatar = formData.get('avatar');
     const newAvatar = {avatar};
-
-    updateAvatar(newAvatar);
-    console.log(newAvatar);
+    if (formElement && avatar) {
+      updateAvatar(newAvatar);
+      console.log(newAvatar);
+      setTimeout(function() {
+        location.reload();
+      }, 1000); // 1000 milliseconds = 1 second
+    }
   });
 }
-
 }

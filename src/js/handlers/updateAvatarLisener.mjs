@@ -1,4 +1,5 @@
 import { updateAvatar } from "../api/user/updateAvatar.mjs";
+import swal from "sweetalert";
 
 export function updateAvatarListener () {
 const form = document.getElementById("editAvatar");
@@ -16,10 +17,15 @@ const form = document.getElementById("editAvatar");
     const newAvatar = {avatar};
     if (formElement && avatar) {
       updateAvatar(newAvatar);
-      console.log(newAvatar);
+
+      swal({
+        title: "Your avatar was edited",
+        icon: "success",
+      });
+      
       setTimeout(function() {
         location.reload();
-      }, 1000); // 1000 milliseconds = 1 second
+      }, 2000);
     }
   });
 }

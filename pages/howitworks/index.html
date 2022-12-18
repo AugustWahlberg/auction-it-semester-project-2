@@ -67,7 +67,7 @@
                   When you list an item you are also required to set a bid ending time. The user who has made the highest bid within the bid ending time, will get the item - while you will get cretited the bid in full.
                   </p>
                   <h4 class="font-bold  p-2 pt-4">Do you have any questions or feedback?</h4>
-                  <button class="contact-us-btn" id="contact-us-btn">Contact us here</button>
+                  <button class="contact-us-btn" id="contactUsBtn">Contact us here</button>
               </div>
             </div>
           </div>
@@ -99,30 +99,29 @@
   </div>
 
   <div class="p-3">
-  <form class="" id="contact-us-form" method="post" action="/auth/login">
+  <form class="" id="contact-us-form">
 
     <div class="form-outline mb-4">
       <label class="form-label">Subject</label>
-      <input type="text" name="subject" class="form-control-input" required title="Provide a subject"/>
+      <input type="text" name="subject" class="form-control-input" title="Provide a subject" required/>
     </div>
 
     <div class="form-outline mb-4">
       <label class="form-label">Question/feeback</label>
-      <textarea name="question" class="form-control-input"></textarea>
+      <textarea name="question" class="form-control-input" required></textarea>
 
     </div>
 
     <div class="form-outline mb-4">
       <label class="form-label" >Your email</label>
-      <input type="email" name="email" class="form-control-input"/>
+      <input type="email" name="email" class="form-control-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
     </div>
-
-  </form>
-</div>
     <div class="flex justify-center items-center border-t p-3">
       <button class="hp-button modal-btn bg-err-red bg-opacity-80 cancel-contact-modal">Cancel</button>
       <button class="hp-button modal-btn bg-succ-green bg-opacity-80 send-contact">Send</button>
     </div>
+  </form>
+</div>
   </div>
 </div>
 <!-- contact us modal end-->

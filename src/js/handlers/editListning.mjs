@@ -1,4 +1,5 @@
 import { edit } from "../api/listings/edit.mjs";
+import swal from "sweetalert";
 
 export async function setEditListingListener () {
   // Declare the "listing" variable at the top of the function
@@ -41,11 +42,23 @@ export async function setEditListingListener () {
      
         const result = await edit(id, listing);
         if (result.ok) {
-          alert("the post was created");
-          location.reload();
+          swal({
+            title: "Your listing was edited",
+            icon: "success",
+          });
+          
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
         }
         else {
-          alert ("something went wrong");
+          swal({
+            title: "We were not able to edit you listing, please try again",
+            icon: "error",
+          });
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
         }
 
     });

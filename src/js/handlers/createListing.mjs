@@ -1,4 +1,5 @@
 import { create } from "../api/listings/create.mjs";
+import swal from "sweetalert";
 
 export async function setCreateListingListener () {
   const form = document.getElementById("createListing");
@@ -28,11 +29,23 @@ export async function setCreateListingListener () {
      
         const result = await create(listing);
         if (result.ok) {
-          alert("the post was created");
-          location.reload();
+          swal({
+            title: "Your listing was created",
+            icon: "success",
+          });
+          
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
         }
         else {
-          alert ("somethinng went wrong");
+          swal({
+            title: "Something went wrong",
+            icon: "error",
+          });
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
         }
 
     });

@@ -13,11 +13,16 @@ import { deleteListingHandler } from "./handlers/deleteListning.mjs";
 import * as viewMyListing from "./pages/view-my-listing/index.js";
 import { setEditListingListener } from "./handlers/editListning.mjs";
 import { getListingByUser } from "./api/listings/userListing.mjs";
-
-
-//console.log("imported");
+import * as myProfileMOdal from "./pages/my-profile/index.mjs";
+import { contactUsModal } from "./pages/how-it-works/index.mjs";
+import { informVisiterMsg } from "./pages/my-profile/msg.mjs";
 
 const path = location.pathname;
+
+if (path === "/pages/howitworks/"){
+  contactUsModal();
+}
+
 
 if (path === "/")  {
     setRegisterFormListener();
@@ -71,6 +76,7 @@ async function viewListings() {
 
 if (path === "/pages/listings/") {
   viewListings();
+  myProfileMOdal.createNewModal();
 }
 
 
@@ -83,12 +89,13 @@ if (path !== "/"  &&  path !== "/"  && localStorage.getItem("token")) {
 
 if (path === "/pages/myprofile/") {
   viewProfile();
+  updateAvatarListener ();
+  myProfileMOdal.createNewModal();
+  myProfileMOdal.editAvatarModal();
+  myProfileMOdal.logOutUser();
+  informVisiterMsg();
 }
 
- // Update Avatar -WORKING
- if (path === "/pages/myprofile/") {
-  updateAvatarListener ();
- }
 
  // Create listing - WORKING
 

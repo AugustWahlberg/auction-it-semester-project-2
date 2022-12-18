@@ -1,5 +1,6 @@
 
 import { deleteListing } from "../api/listings/delete.mjs";
+import swal from "sweetalert";
 
 
 export function deleteListingHandler () {
@@ -13,8 +14,15 @@ if (confirmDeleteListning) {
     e.preventDefault ();
   
     deleteListing();
-    alert ("Your listing was deleted");
-    window.location.href = '/pages/myprofile/';
+    swal({
+      title: "Your listing was deleted",
+      icon: "success",
+    });
+    
+    setTimeout(function() {
+      window.location.href = '/pages/myprofile/';
+    }, 2000);
+    
   });
 }
 }

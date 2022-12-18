@@ -83,6 +83,10 @@ module.exports = {
         "s-container": "700px",
         "bid-input": "200px",
       },
+
+      minHeight: {
+        'hp': '800px',
+      }
     },
   },
   plugins: [

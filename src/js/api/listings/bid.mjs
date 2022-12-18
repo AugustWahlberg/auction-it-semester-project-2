@@ -4,18 +4,16 @@ const action = "/listings/";
 const method = "post";
 
 /**
- * Function to return a post object to create
- * @param {object} listingData 
- * @returns object to create which will be sent to the API
+ * Sends a bid request to the API for a specific listing.
+ * 
+ * @param {Number} amount - The amount of the bid.
+ * @returns {Promise} - A promise that resolves to the API response when the request has completed.
  */
-
-
- export async function bid(amount) {
-
+export async function bid(amount) {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
   const id = params.get("id");
-  const bidListingURL = API_AUCTION_URL+action+id +"/bids";
+  const bidListingURL = API_AUCTION_URL + action + id + "/bids";
 
   const newAmount = { amount };
   const response = await authFetch(bidListingURL, {

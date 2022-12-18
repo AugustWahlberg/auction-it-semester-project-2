@@ -1,13 +1,18 @@
 import { edit } from "../api/listings/edit.mjs";
 import swal from "sweetalert";
 
+/**
+ * Function to add an event listener to the form for editing a listing.
+ * If the form is submitted, the function will make an API call to edit the listing.
+ * @returns {Promise} - The result of the API call to edit the listing.
+ */
 export async function setEditListingListener () {
   // Declare the "listing" variable at the top of the function
   const listing = {};
 
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
-  const id = params.get('id'); // Move the line of code that sets the "id" value to the top of the function
+  const id = params.get('id'); 
   listing.id = id;
 
   const form = document.getElementById("editListing");
@@ -34,10 +39,7 @@ export async function setEditListingListener () {
         listing.description = description;
         listing.media = media;
         listing.tags = tags;
-
-        console.log(media1, media2);
-        console.log(listing);
-        
+      
         // Add each media value as a separate property on the listing object
      
         const result = await edit(id, listing);

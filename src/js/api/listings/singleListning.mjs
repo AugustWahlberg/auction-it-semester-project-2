@@ -15,6 +15,12 @@ const id = params.get("id");
 const url =
 API_AUCTION_URL + action + id + "?_seller=true&_bids=true";
 
+/**
+ * Retrieves a listing by sending a GET request to the API with the provided listing ID.
+ * 
+ * @returns {Promise} - A promise that resolves to the API response when the request has completed.
+ */
+
 export async function getListing() {
   try {
 
@@ -84,8 +90,11 @@ export async function getListing() {
   }
 }
   
-
-
+/**
+ * Retrieves the bid history for a listing by sending a GET request to the API with the provided listing ID.
+ * 
+ * @returns {Promise} - A promise that resolves to the API response when the request has completed.
+ */
 export async function getBidHistory() {
   const response = await authFetch(url);
     const listing = await response.json();

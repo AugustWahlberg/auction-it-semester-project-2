@@ -1,5 +1,8 @@
 import { fetchProfile } from "../../api/user/fetchProfile";
 
+/**
+ * Fetches the user's profile data and displays it on the page.
+ */
 export async function viewProfile() {
   const profileData = await fetchProfile();
    const avatar = profileData.avatar;

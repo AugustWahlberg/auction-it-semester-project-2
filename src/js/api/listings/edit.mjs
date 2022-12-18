@@ -4,20 +4,21 @@ const action = "/listings/";
 const method = "put";
 
 /**
- * Function to return a post object to create
- * @param {object} listingData 
- * @returns object to create which will be sent to the API
+ * Edits a listing by sending a PUT request to the API with the provided listing data.
+ * 
+ * @param {Number} id - The ID of the listing to edit.
+ * @param {Object} listingData - The new data for the listing.
+ * @returns {Promise} - A promise that resolves to the API response when the request has completed.
  */
 export async function edit(id, listingData) {
-
   if (!listingData.id) {
     throw new Error("Edit requires a PostID");
   }
 
-  const updateListingURL = API_AUCTION_URL+action+id;
-    const response = await authFetch (updateListingURL, {
-      method,
-      body: JSON.stringify(listingData)
-    });
-    return response;
-  }
+  const updateListingURL = API_AUCTION_URL + action + id;
+  const response = await authFetch (updateListingURL, {
+    method,
+    body: JSON.stringify(listingData)
+  });
+  return response;
+}

@@ -1,3 +1,8 @@
+/**
+ * Shows a modal window to confirm the deletion of a listing.
+ * @returns {void}
+ */
+
 export function deleteModalActions() {
   //Create new listing variables
 const deleteListningBtn = document.getElementById(

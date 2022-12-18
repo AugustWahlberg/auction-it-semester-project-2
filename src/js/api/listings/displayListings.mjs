@@ -4,14 +4,13 @@ import { authFetch } from "../authFetch.mjs";
 const action = "/listings";
 
 /**
- * GET ALL POSTS
- * @returns All posts (100 default)
+ * Retrieves all listings by sending a GET request to the API.
+ * 
+ * @returns {Promise} - A promise that resolves to the API response when the request has completed.
  */
-
 export async function getListings() {
-  const allPostsURL = `${API_AUCTION_URL}${action}`;
-  const response = await authFetch (allPostsURL);
+  const allListingsURL = `${API_AUCTION_URL}${action}`;
+  const response = await authFetch (allListingsURL);
   const allListings = await response.json();
-  // console.log(allPosts)
   return allListings;
 }

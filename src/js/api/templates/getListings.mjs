@@ -1,16 +1,19 @@
 import { dateOptions } from "../listings/constants.mjs";
   
-  /**
-  * Function to render listings
-  * @param {object} postDataList
-  * @param {const} parent
-  */
- 
+/**
+ * Function to render listings
+ * @param {object[]} listingDataList - List of listing data objects to render
+ * @param {HTMLElement} parent - The parent element to append the listings to
+ */
    export function renderListingTemplates(listingDataList, parent) {
     parent.append(...listingDataList.map((item) => listingTemplate(item, "multiple")));
-    console.log();
   }
- 
+
+  /**
+ * Generates a listing template element from given listing data
+ * @param {object} listingData - The data object for the listing
+ * @returns {HTMLElement} The generated listing template element
+ */
   export function listingTemplate(listingData) {
     const listing = document.createElement("div");
     const id = listingData.id;

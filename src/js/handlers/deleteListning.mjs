@@ -2,7 +2,10 @@
 import { deleteListing } from "../api/listings/delete.mjs";
 import swal from "sweetalert";
 
-
+/**
+ * Function to handle the delete listing button click event
+ * and confirm the delete action with a modal
+ */
 export function deleteListingHandler () {
 
   const confirmDeleteListning =

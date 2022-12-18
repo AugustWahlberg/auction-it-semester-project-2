@@ -4,10 +4,9 @@ import { load } from "../storage/index.mjs";
 /**
  * Function to create the header for the API requests
  * Token is passed in from the LocalStorage
- * @returns headers 
+ * @returns {object} headers 
  */
-
-export function headers() {
+ export function headers() {
   const token = load("token");
   return {
       "Content-Type": "application/json",
@@ -20,7 +19,7 @@ export function headers() {
  * to the API call
  * @param {string} url 
  * @param {object} options 
- * @returns 
+ * @returns {Promise} 
  */
 
 export async function authFetch (url, options = {}) {

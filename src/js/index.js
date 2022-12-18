@@ -20,15 +20,17 @@ import { removeCreateButton } from "./pages/listings/index.js";
 
 const path = location.pathname;
 
+//Contact us function
 if (path === "/pages/howitworks/"){
   contactUsModal();
 }
 
+// Removes create listing button if user is not logged in
 if (path === "/pages/listings/" && !localStorage.getItem("token")) {
   removeCreateButton();
 }
 
-
+// Modals for homepage. login and register
 if (path === "/")  {
     setRegisterFormListener();
     homeModals.registerModalActions();
@@ -37,13 +39,13 @@ if (path === "/")  {
     homeModals.visitModalActions();
     }
 
+// Modals for listing by user
 if (path === "/pages/mylisting/"){
-  viewMyListing.deleteModalActions()
-  viewMyListing.editModalActions()
+  viewMyListing.deleteModalActions();
+  viewMyListing.editModalActions();
 }
 
-// Nav action - WORKING
-
+// Nav action
   if (path === "/pages/listings/" || 
   path === "/pages/howitworks/" ||
   path === "/pages/mylisting/" ||
@@ -53,7 +55,6 @@ if (path === "/pages/mylisting/"){
     navAction();
   }
 
-  // viewListings - WORKING
 async function viewListings() {
   const listings = await listingMethods.getListings();
   const container = document.getElementById("listingsFeed");
@@ -79,19 +80,19 @@ async function viewListings() {
   }
 }
 
+// View all listings
 if (path === "/pages/listings/") {
   viewListings();
   myProfileMOdal.createNewModal();
 }
 
 
-//Display navbar avatar - WORKING
+//Display navbar avatar
 if (path !== "/"  &&  path !== "/"  && localStorage.getItem("token")) {
   setAvatarToNav();
 }
 
-// View Profile -WORKING
-
+// View Profile
 if (path === "/pages/myprofile/") {
   viewProfile();
   updateAvatarListener ();
@@ -102,47 +103,47 @@ if (path === "/pages/myprofile/") {
 }
 
 
- // Create listing - WORKING
-
+ // Create listing
  if (path === "/pages/myprofile/" || path === "/pages/listings/") {
   setCreateListingListener();
 }
 
-//Redirect logged in user from homepage - WORKING
-
+//Redirect logged in user from homepage
 if(localStorage.getItem("token") && path === "/") {
   window.location.replace("./pages/listings/");
 }
 
 
-//View logged in user listings - WORKING
+//View logged in user listings
 async function viewUsersListings () {
   const listings = await listingMethods.fetchLoggedInsListings();
-  console.log(listings)
   const container = document.getElementById("profileListings");
 
   if ( container && listings ) {
     templates.renderloggedInUserListingTemplates (listings, container);
   }
 }
-
+// View all listings by logged in user
 if (path === "/pages/myprofile/") {
   viewUsersListings();
 }
 
-// Get single listing by logged in user - working
+// Get single listing by logged in user
 if (path === "/pages/mylisting/") {
   getListing();
 }
 
+// Delete listing
 if (path === "/pages/mylisting/") {
   deleteListingHandler();
 }
 
+// Edit listing
 if (path === "/pages/mylisting/") {
   setEditListingListener();
 }
 
+//View listing post
 if (path === "/pages/userlisting/") {
   getListingByUser();
 }

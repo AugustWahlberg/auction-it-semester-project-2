@@ -1,16 +1,19 @@
 import { dateOptions } from "../listings/constants.mjs";
 
- /**
-  * Function to render only the users post
-  * @param {object} userListingDataList
-  * @param {const} parent
-  */
+/**
+ * Renders multiple listings templates on the page
+ * @param {Object[]} userListingDataList - An array of user listing data objects
+ * @param {Element} parent - The parent element where the templates should be appended to
+ */
   export function renderloggedInUserListingTemplates(userListingDataList, parent) {
     parent.append(...userListingDataList.map(loggedInUserListingTemplate));
-    console.log();
   }
 
-  
+  /**
+ * Creates a single user listing template
+ * @param {Object} userListings - The data for a single user listing
+ * @returns {Element} The listing template element
+ */
   export function loggedInUserListingTemplate(userListings) {
     const listing = document.createElement("div");
     const id = userListings.id;

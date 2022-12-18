@@ -1,6 +1,12 @@
 import { create } from "../api/listings/create.mjs";
 import swal from "sweetalert";
 
+
+/**
+ * Function to handle the submission of the create listing form
+ * Makes an API call to create a new listing
+ * Shows a success or error message to the user
+ */
 export async function setCreateListingListener () {
   const form = document.getElementById("createListing");
 
@@ -20,12 +26,7 @@ export async function setCreateListingListener () {
         const tag2 = formData.get('tag2');
         const tags = [tag1, tag2].filter(value => value !== null && value !== undefined && value !== "");
         const media = [media1, media2, media3].filter(value => value !== null && value !== undefined && value !== "");
-        const listing = {title, media, description, tags, endsAt};
-
-        console.log(media1, media2);
-        console.log(listing);
-        
-        // Add each media value as a separate property on the listing object
+        const listing = {title, media, description, tags, endsAt};  
      
         const result = await create(listing);
         if (result.ok) {

@@ -16,11 +16,16 @@ import { getListingByUser } from "./api/listings/userListing.mjs";
 import * as myProfileMOdal from "./pages/my-profile/index.mjs";
 import { contactUsModal } from "./pages/how-it-works/index.mjs";
 import { informVisiterMsg } from "./pages/my-profile/msg.mjs";
+import { removeCreateButton } from "./pages/listings/index.js";
 
 const path = location.pathname;
 
 if (path === "/pages/howitworks/"){
   contactUsModal();
+}
+
+if (path === "/pages/listings/" && !localStorage.getItem("token")) {
+  removeCreateButton();
 }
 
 

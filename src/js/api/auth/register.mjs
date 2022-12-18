@@ -34,5 +34,10 @@ else if (result.id) {
   feedbackReg.classList.add("form-success");
   feedbackReg.classList.remove("form-error");
   feedbackReg.innerHTML = "You have successfully registered a user";
+  setTimeout(goToHomepage, 3000);
 }
+}
+
+function goToHomepage() {
+  window.location.href = '/';
 }

@@ -56,6 +56,10 @@ import { dateOptions } from "../listings/constants.mjs";
     tag.classList.add('tags');
     tag.innerText = tags[i];
     tagsElement.appendChild(tag);
-  }
-    return listing;
+
+    if (tags[i] === '') {
+      tag.classList.add("bg-ctn-white");
+    }
+}
+return listing;
   }

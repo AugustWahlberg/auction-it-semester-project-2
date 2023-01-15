@@ -50,7 +50,7 @@ module.exports = {
         "input-blue": "#CEDBDD",
         "ctn-white": "#F8F9F8",
         "succ-green": "#73BA98",
-        "olive-green": "#A2B2A2",
+        "olive-green": "#BACEB7",
         "err-red": "#D77579",
       },
       fontFamily: {
